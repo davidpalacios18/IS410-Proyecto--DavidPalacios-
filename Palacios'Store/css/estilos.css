@@ -1,56 +1,37 @@
-body{
-  background-color: white;
-}
-#contenedorPrincipal{
+/*Sombra del contenedor*/
+#contenidoPrincipal{
   -webkit-box-shadow: 1px 1px 27px 0px rgba(128,128,128,1);
   -moz-box-shadow: 1px 1px 27px 0px rgba(128,128,128,1);
   box-shadow: 1px 1px 27px 0px rgba(128,128,128,1);
+  background-color: white;
 }
-/*Estilos de barra de menu*/
+/*Estilos del navbar, iconos, botones y logo*/
+.colorNavMenu{
+  background-color: #66bdda;
+}
 .iconoMenu{
-  max-width: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 17rem;
 }
-#navMenu{
-  padding-top: 1.5px;
-  padding-bottom: 1.5px;
+/*Estilo de los iconos*/
+.iconColor{
+  color: #08D8FF;
 }
-/*Estilos Parte de Registro*/
-.imglogin{
-  width: 160px;
+/*Estilos del banner inferior*/
+.cuadrosFlotantes{
+  margin-left: auto;
+  margin-right: auto;
 }
-#mercadoTienda{
-  margin-top: 5px;
-  width: 100%;
+.box-award__time, .box-award__title{
+  /*background-color: #00BD9D;
+  opacity: 0.8;*/
+  font-weight: bold;
 }
-#conceptoTienda{
-  color: white;
-  background-color: rgba(000,000,000, 0.9);
+/*Edicion footer*/
+.iconosUpFooter{
+  display: inline;
 }
-#conceptoTienda p{
-  padding-top: 20px;
-}
-
-#conceptoPlanes{
-  background-color: #54C0EB;
-}
-#conceptoPlanes p{
-  color:white;
-  margin-top: 15px;
-}
-#conceptoPlanes span{
-  color:white;
-  font-size: 3rem;
-  margin: 5px;
-}
-/*Estilos de Footer*/
-footer{
-  margin-top: 35px;
-  padding-top: 25px;
-  border-top: 1px solid #84dbff;
-}
-footer p{
-  font-size: 0.9rem;
-}
-footer span{
-  font-size: 1.2rem;
+.footerParrafo{
+  color:#00BD9D !important;
 }
