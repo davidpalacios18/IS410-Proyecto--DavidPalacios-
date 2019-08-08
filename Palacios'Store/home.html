@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="icon" href="iconos/icono-Blanco.png" type="image/x-icon">
+    <!--stylesheet-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+  </head>
+  <body>
+    <header class="">
+      <!--barras de opciones-->
+      <div class="row">
+        <nav id="navMenu" class="navbar navbar-expand-xl sticky-top navbar-dark bg-dark container-fluid">
+          <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">A cercad de</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Planes</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#"><img src="iconos/p.png" class="iconoMenu" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="iniciarSesion" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i> Regístrate</a>
+                <div class="dropdown-menu" aria-labelledby="iniciarSesion">
+                  <a class="dropdown-item" href="#">Cliente</a>
+                  <a class="dropdown-item" href="#">Empresarial</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div><!--Final de la barra de opciones-->
+    </header>
+
+    <!--Contenedor Principal-->
+    <div class="container">
+      <!--Botones de opciones-->
+      <div class="row">
+        <div class="btn-group extended" role="group" aria-label="Basic example">
+          <a class="btn btn-secondary" href="#">Hogar</a>
+          <a class="btn btn-secondary" href="#">Salud</a>
+          <a class="btn btn-secondary" href="#">Deporte</a>
+          <a class="btn btn-secondary" href="#">Tecnología</a>
+          <a class="btn btn-secondary" href="#">Accesorios</a>
+          <a class="btn btn-secondary" href="#">Ropa</a>
+          <a class="btn btn-secondary" href="#">Mantenimiento</a>
+          <a class="btn btn-secondary" href="#">Carrito</a>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="row">
+            <!--Busqueda-->
+            <div class="col-lg-3 col-md-4 d-none d-sm-block">
+              <div class="card">
+                <h4>Búsqueda Avanzada</h4>
+                <form class="" action="index.html" method="post">
+                  <div class="row col">
+                    <label for="">Por Nombre:
+                      <input type="text" class="form-control" name="name" value="">
+                    </label>
+                  </div>
+                  <div class="row col">
+                    <label for="">Por Referencia:
+                      <input type="text" class="form-control" name="name" value="" aria-describedby="ayudaReferencia">
+                    </label>
+                    <small id="ayudaReferencia" class="form-text text-muted">Número único del producto</small>
+                  </div>
+                  <div class="row col">
+                    <label for="">Por Catedoría:
+                      <select class="form-control" name="">
+                        <option>Hogar</option>
+                        <option>Salud</option>
+                        <option>Deporte</option>
+                        <option>Tecnología</option>
+                        <option>Accesorios</option>
+                        <option>Ropa</option>
+                        <option>Mantenimiento</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="row col">
+                    <fieldset>
+                      <legend>Tipo de Promoción</legend>
+                      <input id="reciente" type="checkbox" name="" value=""><label for="reciente">Recientes</label>
+                      <input id="pasados" type="checkbox" name="" value=""><label for="pasados">Pasados</label>
+                    </fieldset>
+                  </div>
+                  <div class="row col">
+                    <fieldset>
+                      <legend>Precios</legend>
+                      <input type="radio" name="tipo-precio" value="Red" id="pleno"><label for="pleno">Pleno</label>
+                      <input type="radio" name="tipo-precio" value="Blue" id="en_oferta"><label for="en_oferta">En oferta</label>
+                    </fieldset>
+                  </div>
+                  <div class="row col">
+                    <hr>
+                    <button type="submit" name="enviar" class="btn btn-primary">Buscar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="col-lg-9 col-md-8 col-sm-12">
+              <div class="card">
+                <h3>Principal</h3>
+                <hr>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div> <!--Fin del contenedor Principal-->
+
+
+    <!--Scripts-->
+    <script src="js/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.js" charset="utf-8"></script>
+
+  </body>
+</html>

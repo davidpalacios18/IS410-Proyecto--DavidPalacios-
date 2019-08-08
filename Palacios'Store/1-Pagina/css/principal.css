@@ -1,0 +1,35 @@
+/*Logotipo de inicio*/
+.logo{
+  width: 150px;
+}
+/*Clase para establecer color de texto en blanco*/
+.textWhite{
+  color: white !important;
+}
+/*Degradado del navbar*/
+.degradadoNavbar{
+  background: linear-gradient(270deg, #00cc97, #00c1cc, #0a8dca);
+  background-size: 600% 600%;
+
+  -webkit-animation: gradientNavbar 30s ease infinite;
+  -moz-animation: gradientNavbar 30s ease infinite;
+  animation: gradientNavbar 30s ease infinite;
+
+  padding: 5px !important;
+}
+
+@-webkit-keyframes gradientNavbar {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradientNavbar {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientNavbar {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
