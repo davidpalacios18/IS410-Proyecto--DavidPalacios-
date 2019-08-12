@@ -1,0 +1,15 @@
+/**/
+body{
+  background-image: url(../img/login.jpg) !important;
+  background-size: cover;
+}
+.btn-color{
+  color: #fff;
+  background-color: #00D8FF;
+}
+
+.textos{
+  border: 0;
+  border-bottom: 1px solid  #00D8FF;
+  text-align: left;
+}
