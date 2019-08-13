@@ -33,3 +33,22 @@
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+/*Modal*/
+  .btn-color{
+    color: #fff;
+    background-color: #00D8FF;
+  }
+
+  .textos{
+    border: 0;
+    border-bottom: 1px solid  #00D8FF;
+    text-align: left;
+  }
+
+/*  #iniciarSesion-Modal{
+    width: 150px !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+*/

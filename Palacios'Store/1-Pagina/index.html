@@ -48,7 +48,7 @@
     <ul class="nav navbar-nav ml-auto ml-md-0">
 
       <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link textWhite" href="login.html" id="iniciarSesion" role="button"  aria-expanded="false">
+        <a class="nav-link textWhite" href="login.html" id="iniciarSesion" role="button" aria-expanded="false" data-toggle="modal" data-target="#iniciarSesion-Modal">
           <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
           <!--<span class="badge badge-danger">7</span>-->
         </a>
@@ -70,10 +70,58 @@
 
   </nav><!--Fin de la barra de Barra de Navegacion-->
 
+  <!-- Modal -->
+  <div class="modal fade" id="iniciarSesion-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">¡Inicia Sesión en Palacio´s!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="email" id="email" class="form-control textos" placeholder="Dirección Correo Electrónico" required="required" autofocus="autofocus">
+                <label for="email">Dirección Correo Electrónico</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="password" id="contraseña" class="form-control textos" placeholder="Contraseña" required="required">
+                <label for="contraseña">Contraseña</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="remember-me">
+                  ¿Recordar Contraseña?
+                </label>
+              </div>
+            </div>
+          </form>
+          <div class="text-center">
+            <a class="d-block small mt-3" href="register.html">Registrar una cuenta</a>
+            <a class="d-block small" href="forgot-password.html">Olvido su contraseña?</a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Iniciar Sesión</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <div id="wrapper">
 
     <!-- Barra lateral -->
-    <ul class="sidebar navbar-nav">
+    <ul class="sidebar navbar-nav" >
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-archive"></i>
@@ -86,7 +134,7 @@
           <span>Categorias</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Opciones</h6>
+          <h6 class="dropdown-header">Categorias</h6>
           <a class="dropdown-item" href="forgot-password.html">Hogar</a>
           <a class="dropdown-item" href="login.html">Salud</a>
           <a class="dropdown-item" href="register.html">Deporte</a>
@@ -234,7 +282,7 @@
             <!--Fila contenedora de productos-->
             <div id="hogarWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -245,7 +293,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -256,7 +304,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -267,7 +315,19 @@
                   </div>
                 </div>
               </div>
-            </div>
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
+                <div class="card text-center">
+                  <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div> <!--Fin de la fila-->
+
           </div>
           <div class="card-footer">
 
@@ -283,7 +343,7 @@
             <!--Fila contenedora de productos-->
             <div id="saludWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/hogar3.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -294,7 +354,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/hogar3.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -305,7 +365,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/hogar3.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -331,7 +391,7 @@
             <!--Fila contenedora de productos-->
             <div id="deporteWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/deporte.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -342,7 +402,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/deporte.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -353,7 +413,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/deporte.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -379,7 +439,7 @@
             <!--Fila contenedora de productos-->
             <div id="tecnoWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/tecnologia.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -390,7 +450,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/tecnologia.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -401,7 +461,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/tecnologia.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -427,7 +487,7 @@
             <!--Fila contenedora de productos-->
             <div id="accesoriosWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/accesorios.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -438,7 +498,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/accesorios.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -449,7 +509,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/banner/accesorios.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -475,7 +535,7 @@
             <!--Fila contenedora de productos-->
             <div id="ropaWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/ropa.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -486,7 +546,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/ropa.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -497,7 +557,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/ropa.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -523,7 +583,7 @@
             <!--Fila contenedora de productos-->
             <div id="tecnoWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/herramientas.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -534,7 +594,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/herramientas.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -545,7 +605,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-3">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/herramientas.jpg" class="card-img-top" alt="...">
                   <div class="card-body">

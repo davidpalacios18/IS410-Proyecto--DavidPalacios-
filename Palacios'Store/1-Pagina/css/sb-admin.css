@@ -10669,7 +10669,7 @@ body {
 }
 
 .sidebar {
-  width: 90px !important;
+  width: 70px !important;
   background-color: #212529;
   min-height: calc(100vh - 56px);
 }
@@ -10681,7 +10681,7 @@ body {
 .sidebar .nav-item .nav-link {
   text-align: center;
   padding: 0.75rem 1rem;
-  width: 90px;
+  width: 70px;
 }
 
 .sidebar .nav-item .nav-link span {
@@ -10721,7 +10721,7 @@ body {
 
 @media (min-width: 768px) {
   .sidebar {
-    width: 225px !important;
+    width: 210px !important;
   }
   .sidebar .nav-item .nav-link {
     display: block;
