@@ -121,7 +121,7 @@
   <div id="wrapper">
 
     <!-- Barra lateral -->
-    <ul class="sidebar navbar-nav" >
+    <ul id="slide-opciones" class="sidebar navbar-nav" >
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-archive"></i>
@@ -136,11 +136,12 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Categorias</h6>
           <a class="dropdown-item" href="forgot-password.html">Hogar</a>
-          <a class="dropdown-item" href="login.html">Salud</a>
+          <a class="dropdown-item" href="login.html">Salud y Fitness</a>
           <a class="dropdown-item" href="register.html">Deporte</a>
           <a class="dropdown-item" href="forgot-password.html">Tecnología</a>
           <a class="dropdown-item" href="forgot-password.html">Accesorios</a>
-          <a class="dropdown-item" href="forgot-password.html">Ropa</a>
+          <a class="dropdown-item" href="forgot-password.html">Moda</a>
+          <a class="dropdown-item" href="forgot-password.html">Belleza</a>
           <a class="dropdown-item" href="forgot-password.html">Mantenimiento</a>
           <div class="dropdown-divider"></div>
           <!--<h6 class="dropdown-header">Other Pages:</h6>
@@ -249,7 +250,7 @@
                 <a class="nav-link" href="#hogar">Hogar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#salud">Salud</a>
+                <a class="nav-link" href="#salud">Salud y Fitness</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#deporte">Deporte</a>
@@ -261,7 +262,10 @@
                 <a class="nav-link" href="#accesorios">Accesorios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#ropa">Ropa</a>
+                <a class="nav-link" href="#ropa">Moda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Belleza">Belleza</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#mantenimiento">Mantenimiento</a>
@@ -284,15 +288,32 @@
               <!--columnas-->
               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
-                  <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="../images/encontrar/hogar.jpg" class="img-fluid" alt="...">
+                  </div>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Mueble</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <p class="card-text">Atractivo Mueble de Sala</p>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 350.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 150.00</span></p>
+                      </div><hr>
+                    </div>
+                    <a href="#" class="btn btn-primary">Añadir al carrito</a>
                   </div>
                 </div>
               </div>
+
               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
                 <div class="card text-center">
                   <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
@@ -687,7 +708,6 @@
   <script src="js/bootstrap.min.js" charset="utf-8"></script>
   <script src="js/jquery-3.4.1.min.js" charset="utf-8"></script>
   <script src="js/controlador.js" charset="utf-8"></script>
-
 </body>
 
 </html>

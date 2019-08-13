@@ -8,30 +8,35 @@
 }
 /*Degradado del navbar*/
 .degradadoNavbar{
-  background: linear-gradient(270deg, #00cc97, #00c1cc, #0a8dca);
-  background-size: 600% 600%;
+  background: linear-gradient(270deg, #11cce5, #053940, #13e3ff, #09717f, #0eaabf);
+  background-size: 1000% 1000%;
 
-  -webkit-animation: gradientNavbar 30s ease infinite;
-  -moz-animation: gradientNavbar 30s ease infinite;
-  animation: gradientNavbar 30s ease infinite;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
 
-  padding: 5px !important;
+  padding: 3px !important;
 }
 
-@-webkit-keyframes gradientNavbar {
+@-webkit-keyframes AnimationName {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-@-moz-keyframes gradientNavbar {
+@-moz-keyframes AnimationName {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-@keyframes gradientNavbar {
+@keyframes AnimationName {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+/*Slide*/
+#slide-opciones{
+  background: #09717F;
 }
 
 /*Modal*/
@@ -45,10 +50,10 @@
     border-bottom: 1px solid  #00D8FF;
     text-align: left;
   }
-
-/*  #iniciarSesion-Modal{
-    width: 150px !important;
-    margin-right: auto;
-    margin-left: auto;
-  }
-*/
+/*Productos*/
+#precio-oferta{
+  color: #0EAABF!important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: auto !important;
+}
