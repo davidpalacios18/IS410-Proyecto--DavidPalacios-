@@ -44,6 +44,11 @@
     color: #fff;
     background-color: #00D8FF;
   }
+  .btn-colorPerfil{
+    color: #fff;
+    font-weight: bold;
+    background: #0EA4B8;
+  }
 
   .textos{
     border: 0;
@@ -88,4 +93,26 @@
 #opcionPerfil{
   margin-left: auto;
   margin-right: auto;
+}
+fieldset{
+  text-align: center;
+}
+
+.centradoFOrmulario{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#perfil-ususario input{
+  margin-bottom: 15px;
+}
+.img-recuadroPrincipal{
+  padding: 15pX;
+  border: 1px solid #CACBCC;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-recuadroSecundario{
+  text-align: center;
+  background-color: #F2F3F5;
 }
