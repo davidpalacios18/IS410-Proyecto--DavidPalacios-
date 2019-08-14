@@ -279,7 +279,7 @@
 
         <div id="perfil-ususario" class="card mb-3">
           <div class="card-header">
-
+            <h2>Pefil</h2>
           </div>
           <div class="card-body">
             <div class="row">
@@ -299,6 +299,7 @@
                     <li>Mi perfil</li>
                     <li>Fotografía</li>
                     <li>Cuenta</li>
+                    <li>Favoritos</li>
                   </ul>
                 </div>
               </div>
@@ -365,15 +366,28 @@
                     </div>
                   </div>
                   <hr>
-                  <div class="">
-                    <label for="">Contraseña</label>
-                  </div>
-                  <input id="contraseña-Actual" type="text" class="form-control">
-                  <input id="contraseña-Actual" type="text" class="form-control">
-                  <input id="contraseña-Actual" type="text" class="form-control">
-
+                  <label for="">Contraseña</label>
+                  <input id="contraseña-Actual" type="text" class="form-control" placeholder="Escribe la contraseña actual">
+                  <input id="contraseña-Actual" type="text" class="form-control" placeholder="Escribe la nueva contraseña">
+                  <input id="contraseña-nueva" type="text" class="form-control" placeholder="Escribe la nueva contraseña otra vez">
+                  <hr>
+                  <button class="btn btn-color" type="button" name="button">Cambiar la contraseña</button>
                 </div><!--Fin de la cuenta-->
-
+                <!--Favoritos-->
+                <div id="favoritos" class="">
+                  <div id="promociones-favoritas" class="">
+                    <fieldset>
+                      <legend>Promociones Favoritas</legend>
+                      <small>Las mejores promociones para ti</small>
+                    </fieldset>
+                  </div>
+                  <div id="empresas-favoritas" class="">
+                    <fieldset>
+                      <legend>Empresas Favoritas</legend>
+                      <small>Empresas con los mejores productos a tu alcance</small>
+                    </fieldset>
+                  </div>
+                </div>
               </div><!--fin del  lado derecho de las barras-->
             </div>
           </div><!--Fin del card-body-->
