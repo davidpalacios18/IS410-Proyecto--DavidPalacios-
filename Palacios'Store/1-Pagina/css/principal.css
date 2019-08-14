@@ -57,3 +57,11 @@
   font-weight: bold;
   margin-left: auto !important;
 }
+.tarjeta{
+  padding: 10px !important;
+}
+.btn-anadirCarrito{
+  color: white;
+  font-weight: 600;
+  background: #0EA4B8;
+}
