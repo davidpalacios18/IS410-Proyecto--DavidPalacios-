@@ -65,3 +65,27 @@
   font-weight: 600;
   background: #0EA4B8;
 }
+
+/*Perfil*/
+#imagen-perfil{
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#nombre-perfil{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+#opcionPerfil{
+  margin-left: auto;
+  margin-right: auto;
+}

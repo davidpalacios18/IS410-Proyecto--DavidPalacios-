@@ -277,6 +277,114 @@
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
         </div>
 
+        <div id="perfil-ususario" class="card mb-3">
+          <div class="card-header">
+
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <!--Barra lateral-->
+              <div id="opcionPerfil" class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-8">
+                <div id="encabezado-perfil" class="row">
+                  <div id="imagen-perfil" class="" style="background-image: url('img/perfil.jpg')">
+                    <!-- style="background-image: url('img/perfil.jpg')"  -->
+                    <!--<img class="img-fluid rounded-circle" src="img/perfil.jpg" alt="">-->
+                  </div><!--Fin de la imagen del usuario-->
+                  <div id="nombre-perfil" class="text-center">
+                    Maria Juanita Panqueque Flores
+                  </div>
+                </div>
+                <div  class="row">
+                  <ul>
+                    <li>Mi perfil</li>
+                    <li>Fotografía</li>
+                    <li>Cuenta</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!--Lado derecho de los datos-->
+              <div id="InformacionPerfil" class="col-xl-9 col-lg-9 col-md-8 col-sm-6 col-8">
+                <!--perfil publico-->
+                <div id="perfil-publico" class="">
+                  <fieldset>
+                    <legend>Perfil público</legend>
+                    <small>Añade informacion sobre ti</small>
+                  </fieldset>
+                  <label for="">Informacion básica</label>
+                  <hr>
+                  <input id="nombre-usuario" type="text"  class="form-control" placeholder="Nombre Usuario">
+                  <input id="apellido-usuario" type="text"  class="form-control" placeholder="Apellido Usuario">
+                  <input id="email-usuario" type="text"  class="form-control" placeholder="Correo electrónico">
+                  <div class="form-group">
+                    <label for="descripcion-usuario">Descripción</label>
+                    <textarea id="descripcion-usuario" name="descripcion-usuario" class="form-control" rows="5" cols="70" aria-describedby="descripcion-Help"></textarea>
+                    <small id="descripcion-Help" class="form-text text-muted">Describe tus gustos y preferencias</small>
+                  </div>
+                  <hr>
+                  <button class="btn btn-color" type="button" name="button">Guardar</button>
+                </div><!--Fin de perfil publico-->
+                <!--Fotografía-->
+                <div id="fotografia-publica" class="">
+                  <fieldset>
+                    <legend>Fotografía</legend>
+                    <small>Añade una foto tuya al perfil</small>
+                  </fieldset>
+                  <hr>
+                  <div class="">
+                    <h6>Vista previa de la imagen</h6>
+                  </div>
+                  <div class="">
+                    <div class="">
+                      <img src="img/anonymous_3.png" alt="">
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="custom-file">
+                    <label for="cambiarFoto-usuario">Añadir o cambiar imagen:</label>
+                    <input type="file" class="custom-file-input form-control-file" id="validatedCustomFile" required>
+                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="file" class="form-control-file" id="cambiarFoto-usuario">
+                  </div>
+                  <hr>
+                  <button class="btn btn-color" type="button" name="button">Guardar</button>
+                </div><!--Fin de fotografia publica-->
+                <!--Cuenta-->
+                <div id="cuenta-publica" class="">
+                  <fieldset>
+                    <legend>Cuenta</legend>
+                    <small>Edita la configuración de tu cuenta y cambia la contraseña aquí</small>
+                  </fieldset>
+                  <hr>
+                  <div class="col-md-4 mb-3">
+                   <label for="validationCustomUsername">Username</label>
+                   <div class="input-group">
+                     <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                     <div class="input-group-prepend">
+                       <span class="input-group-text" id="inputGroupPrepend">opo</span>
+                     </div>
+                     <div class="invalid-feedback">
+                       Please choose a username.
+                     </div>
+                   </div>
+                 </div>
+                </div><!--Fin de la cuenta-->
+
+              </div><!--fin del  lado derecho de las barras-->
+            </div>
+          </div><!--Fin del card-body-->
+          <div class="card-footer">
+
+          </div>
+        </div>
+
         <!--Productos de categoria Hogar-->
         <div id="hogar" class="card mb-3">
           <div class="card-header">
@@ -459,9 +567,6 @@
           </div>
           <div class="card-body">
             <div class="row">
-              <div class="col-12 text-center">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/4T2xh4Crj7c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
             </div>
             <!--Fila contenedora de productos-->
             <div id="tecnoWrapper" class="row">
