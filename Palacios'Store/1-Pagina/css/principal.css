@@ -117,6 +117,13 @@ fieldset{
   background-color: #F2F3F5;
 }
 
+/*Principal*/
+#bannerPrincipal{
+  height: 326px;
+  background-size: cover; 
+}
+
+/*Efecto Swiper*/
 .swiper-slide {
     background-position: center !important;
     background-size: cover !important;
