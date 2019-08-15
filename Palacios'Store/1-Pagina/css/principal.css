@@ -90,7 +90,7 @@
   font-weight: bold;
   display: block;
 }
-#opcionPerfil{
+#opcionPerfil , #InformacionPerfil{
   margin-left: auto;
   margin-right: auto;
 }
@@ -115,4 +115,16 @@ fieldset{
 .img-recuadroSecundario{
   text-align: center;
   background-color: #F2F3F5;
+}
+
+.swiper-slide {
+    background-position: center !important;
+    background-size: cover !important;
+    width: 300px !important;
+    height: 300px !important;
+}
+.swiper-container {
+      width: 80% !important;
+      padding-top: 50px !important;
+      padding-bottom: 50px !important;
 }
