@@ -65,10 +65,21 @@
 .tarjeta{
   padding: 10px !important;
 }
-.btn-anadirCarrito{
-  color: white;
+
+#imagenProducto img{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 149px
+  max-height: 150px !important;
+}
+
+.btn-producto{
+  color: #0EA4B8 !important;
+  padding: 3px;
+  font-size: 12px;
   font-weight: 600;
-  background: #0EA4B8;
+  /*background: #0EA4B8;*/
 }
 
 /*Perfil*/
@@ -120,7 +131,7 @@ fieldset{
 /*Principal*/
 #bannerPrincipal{
   height: 326px;
-  background-size: cover; 
+  background-size: cover;
 }
 
 /*Efecto Swiper*/
