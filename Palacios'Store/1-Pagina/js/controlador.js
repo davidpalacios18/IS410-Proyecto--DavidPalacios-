@@ -12,6 +12,7 @@ function esconderCategorias(){
   $('#categoria-moda').hide(1000);
   $('#categoria-belleza').hide(1000);
   $('#categoria-mantenimiento').hide(1000);
+  $('#estadisticas').hide(1000);
 };
 /*
 function mostrarPerfil(){
@@ -70,7 +71,11 @@ function mostrarCategoria(categoria){
         esconderCategorias()
         $('#contenido-Principal').show(2000);
         break;
-
+      case 'estadistica':
+        esconderCategorias();
+        $('#contenido-Principal').hide(2000);
+        $('#estadisticas').show(2000);
+        break;
     	default:
     		alert('Nobody sucks!');
     }
