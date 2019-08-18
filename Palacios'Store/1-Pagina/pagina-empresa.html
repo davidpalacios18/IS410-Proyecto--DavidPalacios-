@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--Titulo Principal-->
+  <title>Palacio´s</title>
+  <link rel="icon" href="../iconos/icono-Blanco.png" type="image/x-icon">
+
+  <!--Fuentes personalizadas para esta plantilla-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Complemento de nivel de página CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Estilos personalizados para esta plantilla-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+
+  <!--Estilos de la plantilla, Personalizada-->
+  <link rel="stylesheet" href="css/principal.css">
+  <link rel="stylesheet" href="css/swiper.min.css"
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body id="page-top">
+  <!--Barra de Navegacion-->
+  <nav class="navbar navbar-expand navbar-dark bg-dark degradadoNavbar static-top">
+    <!--Logo de Inicio-->
+    <a class="navbar-brand mr-1" onclick="mostrarCategoria('contenido-Principal')" href="pagina-empresa.html"><img class="logo" src="../iconos/p.png" alt=""></a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Búsqueda de barra de navegación -->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Buscar..." aria-label="buscar" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-info" type="button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </nav><!--Fin de la barra de Barra de Navegacion-->
+
+  <div id="wrapper">
+
+    <!-- Barra lateral -->
+    <ul id="slide-opciones" class="sidebar navbar-nav" >
+      <li  class="nav-item">
+        <a class="nav-link" onclick="mostrarCategoria('contenido-Principal')" href="pagina-empresa.html">
+          <i class="fas fa-fw fa-archive"></i>
+          <span>Principal</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-store"></i>
+          <span>Categorias</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Categorias</h6>
+          <a class="dropdown-item" onclick="mostrarCategoria('hogar')" href="#">Hogar</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('salud')" href="#">Salud</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('deporte')" href="#">Deporte</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('tecnologia')" href="#">Tecnología</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('accesorio')" href="#">Accesorios</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('moda')" href="#">Moda</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('belleza')" href="#">Belleza</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('mantenimiento')" href="#">Mantenimiento</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Carrito</span></a>
+      </li>
+      <li  class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-city"></i>
+          <span>Sucursales</span></a>
+        </li>
+      <li  class="nav-item">
+        <a onclick="mostrarCategoria('perfil')" class="nav-link" href="#">
+          <i class="fas fa-user-alt"></i>
+          <span>Perfil</span></a>
+      </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+      <!---->
+      <div class="card mb-3">
+        <div class="card-header text-center">
+          <h5>¡Es un gusto tenerte de nuevo en <b>Palacio´s</b>!</h5>
+        </div>
+      </div>
+
+
+      <!--Ventana del perfil del empresarial-->
+      <div id="perfil-ususario" class="card mb-3">
+        <div class="card-header">
+          <h2>Perfil</h2>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <!--Barra lateral-->
+            <div id="opcionPerfil" class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 col-8">
+              <div id="encabezado-perfil" class="row">
+                <div id="imagen-perfil" class="" style="background-image: url('img/coca-cola.png')">
+                  <!-- style="background-image: url('img/perfil.jpg')"  -->
+                  <!--<img class="img-fluid rounded-circle" src="img/perfil.jpg" alt="">-->
+                </div><!--Fin de la imagen del empresa-->
+                <div id="nombre-perfil" class="text-center">
+                  Distribuidora Coca Cola
+                </div>
+              </div>
+              <hr>
+              <div  class="row">
+                <div class="col-12">
+                  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="btn btn-block btn-colorPerfil nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Perfil</a>
+                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Fotografía</a>
+                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cuenta</a>
+                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Sucursales</a>
+                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" href="index.html">Cerrar Sesión</a>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+
+            <!--Lado derecho de los datos-->
+            <div id="InformacionPerfil" class="col-xl-9 col-lg-9 col-md-8 col-sm-6 col-12">
+
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                  <!--perfil publico-->
+                  <div id="perfil-publico" class="">
+                    <fieldset>
+                      <legend>Perfil Empresarial</legend>
+                      <small>Añade información sobre ti</small>
+                    </fieldset>
+                    <hr>
+                    <div class="centradoFOrmulario">
+                      <label for="">Informacion básica</label>
+                      <br>
+                      <input id="nombre-empresa" type="text"  class="form-control textos" placeholder="Nombre Empresa">
+                      <input id="sitio-empresa" type="text"  class="form-control textos" placeholder="Sitio web">
+
+                      <input id="titulo-empresa" type="text" class="form-control textos" placeholder="Pagina de Facebook" aria-describedby="titulo-empresa_descripcion">
+                      <small id="titulo-empresa_descripcion" class="form-text text-muted">Añade tu pagina de Facebook"</small>
+                      <br>
+                      <div class="form-group">
+                        <label for="descripcion-empresa">Descripción</label>
+                        <textarea id="descripcion-empresa" name="descripcion-empresa" class="form-control textos" rows="5" cols="70" aria-describedby="descripcion-Help"></textarea>
+                        <small id="descripcion-Help" class="form-text text-muted">Cuenta a tus clientes a que se dedica tu empresa</small>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="centradoFOrmulario text-center">
+                      <button class="btn btn-color" type="button" name="button">Guardar</button>
+                    </div>
+                  </div><!--Fin de perfil publico-->
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                  <!--Fotografía-->
+                  <div id="fotografia-publica" class="">
+                    <fieldset>
+                      <legend>Fotografía</legend>
+                      <small>Añade una foto de tu empresa al perfil</small>
+                    </fieldset>
+                    <hr>
+                    <div class="centradoFOrmulario">
+                      <h6>Vista previa de la imagen</h6>
+                      <div class="img-recuadroPrincipal">
+                        <div class="img-recuadroSecundario">
+                          <img class="img-fluid" src="img/anonymous_3.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="centradoFOrmulario">
+                      <label for="cambiarFoto-empresa">Añadir o cambiar imagen:</label>
+                      <div class="input-group mb-3">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input textos" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                          <label class="custom-file-label" for="inputGroupFile01">No has seleccionado un archivo</label>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="centradoFOrmulario text-center">
+                      <button class="btn btn-color" type="button" name="button">Guardar</button>
+                    </div>
+                  </div><!--Fin de fotografia publica-->
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                  <!--Cuenta-->
+                  <div id="cuenta-publica" class="">
+                    <fieldset>
+                      <legend>Cuenta</legend>
+                      <small>Edita la configuración de tu cuenta y cambia la contraseña o plan, aquí</small>
+                    </fieldset>
+                    <hr>
+                    <div class="centradoFOrmulario">
+                      <label for="cuenta-correo">Correo electrónico:</label>
+                      <div class="input-group">
+                        <input id="cuenta-correo" type="text" class="form-control textos" aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                          <span type="button" class="btn input-group-text"  style="margin-bottom: 15px;"><i class="fas fa-pencil-alt"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="centradoFOrmulario">
+                      <label for="">Plan Contratado</label><br>
+                      <input id="planContratado" class="form-control textos" type="text" placeholder="Basico" readonly>
+                      <br>
+                      <div class="centradoFOrmulario text-center">
+                        <button class="btn btn-color" type="button textos" name="button">Cambiar Plan</button>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="centradoFOrmulario">
+                      <label for="">Contraseña</label>
+                      <input id="contraseña-Actual" type="text" class="form-control textos" placeholder="Escribe la contraseña actual">
+                      <input id="contraseña-Actual" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña">
+                      <input id="contraseña-nueva" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña otra vez">
+                    </div>
+                    <hr>
+                    <div class="centradoFOrmulario text-center">
+                      <button class="btn btn-color" type="button" name="button">Guardar Cambios</button>
+                    </div>
+                  </div><!--Fin de la cuenta-->
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                  <!--Favoritos-->
+                  <div id="sucursales" class="">
+                    <div id="promociones-favoritas" class="">
+                      <fieldset>
+                        <legend>Promociones Favoritas</legend>
+                        <small>Las mejores promociones para ti</small>
+                      </fieldset>
+                      <hr>
+                      <div class="centradoFOrmulario">
+
+                      </div>
+                    </div>
+                    <div id="empresas-favoritas" class="">
+                      <fieldset>
+                        <legend>Empresas Favoritas</legend>
+                        <small>Empresas con los mejores productos a tu alcance</small>
+                      </fieldset>
+                      <hr>
+                      <div class="centradoFOrmulario">
+
+                      </div>
+                    </div>
+                  </div><!-- Fin de Favoritos-->
+                </div>
+              </div><!--Fin del fill tabContent-->
+
+            </div><!--fin del  lado derecho de las barras-->
+          </div><!--Fin de la fila de la card-body -->
+        </div><!--Fin del card-body-->
+        <div class="card-footer">
+        </div>
+      </div><!--Fin de Ventana del perfil del empresa-->
+
+      <!--Productos de categoria Hogar-->
+      <div id="categoria-hogar" class="card mb-3">
+        <div class="card-header">
+          <h5><i class="fas fa-home"></i> Hogar</h5>
+        </div>
+        <div class="card-body">
+          <!--Fila contenedora de productos-->
+          <div id="hogarWrapper" class="row">
+            <!--columnas-->
+            <!--Primer Producto-->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen" >
+              <div class="card text-center ">
+                <div id="imagenProducto" class="card-img-top">
+                  <img src="img/productos/1.jpg" class="img-fluid" alt="...">
+                </div>
+                <div class="card-body tarjeta">
+                  <div class="">
+                    <h5 id="titulo-Producto" class="card-title">Mueble</h5>
+                  </div>
+                  <div id="descripcion-Producto" class="">
+                    <small><p class="card-text truncar-texto">Mueble de esquina</p></small>
+                    <div class="card-text row">
+                      <div class="col-6">
+                        <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                      </div>
+                      <div class="col-6">
+                        <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 1250.00</span> </small>
+                      </div>
+                    </div><hr>
+                    <div class="">
+                      <p class="card-text"><span id="precio-oferta">L 950.00</span></p>
+                    </div><hr>
+                  </div>
+                  <div class="">
+                    <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                  </div>
+                </div>
+              </div>
+            </div><!--FIn-->
+
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+              <div class="card text-center ">
+                <div id="imagenProducto" class="card-img-top">
+                  <img src="img/productos/2.jpg" class="img-fluid" alt="...">
+                </div>
+                <div class="card-body tarjeta">
+                  <div class="">
+                    <h5 id="titulo-Producto" class="card-title">Mueble</h5>
+                  </div>
+                  <div id="descripcion-Producto" class="">
+                  <small><p class="card-text truncar-texto">Atractivo Mueble de Sala</p></small>
+                    <div class="card-text row">
+                      <div class="col-6">
+                        <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                      </div>
+                      <div class="col-6">
+                        <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 3500.00</span> </small>
+                      </div>
+                    </div><hr>
+                    <div class="">
+                      <p class="card-text"><span id="precio-oferta">L 2650.00</span></p>
+                    </div><hr>
+                  </div>
+                  <div class="">
+                    <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                  </div>
+                </div>
+              </div>
+            </div><!--Fin-->
+
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+              <div class="card text-center ">
+                <div id="imagenProducto" class="card-img-top">
+                  <img src="img/productos/3.jpg" class="img-fluid" alt="...">
+                </div>
+                <div class="card-body tarjeta">
+                  <div class="">
+                    <h5 id="titulo-Producto" class="card-title">Muebles</h5>
+                  </div>
+                  <div id="descripcion-Producto" class="">
+                    <small><p class="card-text truncar-texto">Muebles para sala de estar</p></small>
+                    <div class="card-text row">
+                      <div class="col-6">
+                        <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                      </div>
+                      <div class="col-6">
+                        <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 1050.00</span> </small>
+                      </div>
+                    </div><hr>
+                    <div class="">
+                      <p class="card-text"><span id="precio-oferta">L 750.00</span></p>
+                    </div><hr>
+                  </div>
+                  <div class="">
+                    <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                  </div>
+                </div>
+              </div>
+            </div><!--Fin-->
+
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+              <div class="card text-center ">
+                <div id="imagenProducto" class="card-img-top">
+                  <img src="img/productos/4.webp" class="img-fluid" alt="...">
+                </div>
+                <div class="card-body tarjeta">
+                  <div class="">
+                    <h5 id="titulo-Producto" class="card-title">Comedor</h5>
+                  </div>
+                  <div id="descripcion-Producto" class="">
+                    <small><p class="card-text truncar-texto">Atractivo comedor para 6 personas</p></small>
+                    <div class="card-text row">
+                      <div class="col-6">
+                        <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                      </div>
+                      <div class="col-6">
+                        <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 4550.00</span> </small>
+                      </div>
+                    </div><hr>
+                    <div class="">
+                      <p class="card-text"><span id="precio-oferta">L 4000.00</span></p>
+                    </div><hr>
+                  </div>
+                  <div class="">
+                    <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                  </div>
+                </div>
+              </div>
+            </div><!--Fin-->
+
+          </div> <!--Fin de la fila-->
+
+        </div>
+        <div class="card-footer">
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © Palacio´s 2019</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top" style="background: #00D8FF">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <!--<script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>-->
+  <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="js/swiper.min.js" charset="utf-8"></script>
+  <script src="js/jquery-3.4.1.min.js" charset="utf-8"></script>
+  <script src="js/controlador.js" charset="utf-8"></script>
+</body>
+
+</html>
