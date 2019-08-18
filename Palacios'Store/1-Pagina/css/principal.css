@@ -49,6 +49,11 @@
     font-weight: bold;
     background: #0EA4B8;
   }
+  .truncar-texto{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 
   .textos{
     border: 0;
@@ -70,7 +75,7 @@
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  min-height: 149px
+  min-height: 149px;
   max-height: 150px !important;
 }
 
@@ -81,6 +86,18 @@
   font-weight: 600;
   /*background: #0EA4B8;*/
 }
+
+/*Estilos del area Principal*/
+/*Frase bannrer*/
+#parrafoBanner{
+  color: #fff;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 10%;
+  margin-left: 22%;
+}
+
 
 /*Perfil*/
 #imagen-perfil{

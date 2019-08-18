@@ -19,6 +19,7 @@
 
   <!--Estilos de la plantilla, Personalizada-->
   <link rel="stylesheet" href="css/principal.css">
+  <link rel="stylesheet" href="css/swiper.min.css"
   <link rel="stylesheet" href="../css/animations.css">
 </head>
 
@@ -26,7 +27,7 @@
   <!--Barra de Navegacion-->
   <nav class="navbar navbar-expand navbar-dark bg-dark degradadoNavbar static-top">
     <!--Logo de Inicio-->
-    <a class="navbar-brand mr-1" href="index.html"><img class="logo" src="../iconos/p.png" alt=""></a>
+    <a class="navbar-brand mr-1" onclick="mostrarCategoria('contenido-Principal')" href="index.html"><img class="logo" src="../iconos/p.png" alt=""></a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -62,15 +63,15 @@
           <i class="fas fa-user-circle fa-fw"></i> Regrístrate
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#"><i class="fas fa-chalkboard-teacher"></i> Cliente</a></a>
-          <a class="dropdown-item" href="#"><i class="fas fa-building"></i> Empresarial</a>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cuenta-Usuario"><i class="fas fa-chalkboard-teacher"></i> Cliente</a></a>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cuenta-Empresa"><i class="fas fa-building"></i> Empresarial</a>
         </div>
       </li>
     </ul>
 
   </nav><!--Fin de la barra de Barra de Navegacion-->
 
-  <!-- Modal -->
+  <!-- Modal iniciar sesión-->
   <div class="modal fade" id="iniciarSesion-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -104,29 +105,120 @@
             </div>
           </form>
           <div class="text-center">
-            <a class="d-block small mt-3" href="register.html">Registrar una cuenta</a>
-            <a class="d-block small" href="forgot-password.html">Olvido su contraseña?</a>
+            <a class="d-block small mt-3" href="#">Registrar una cuenta</a>
+            <a class="d-block small" href="#">Olvido su contraseña?</a>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Iniciar Sesión</button>
+          <a type="button" class="btn btn-primary" href="pagina-usuario.html">Iniciar Sesión</a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Modal Crear cuenta usuario-->
+  <div class="modal fade" id="cuenta-Usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Crea una cuenta de usuario en <b>Palacio´s</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Información básica</h6>
+          <form class="">
+            <hr>
+            <div class="">
+              <input id="nombre" type="text" class="form-control textos" placeholder="Nombre"><br>
+              <input id="apellido" type="text" class="form-control textos" placeholder="Apellido"><br>
+              <label for="">Fecha de nacimiento  </label><br>
+              <div class="text-center">
+                <select id="dia_N" class="from-control textos" name=""></select>
+                <select id="mes_N" class="from-control textos" name=""></select>
+                <select id="anio_N" class="from-control textos" name=""></select>
+              </div>
+              <br><br>
+              <label for="">Género</label><br>
+              <div class="text-center">
+                <label for=""><input type="radio" name="sexo" value="">Hombre</label>
+                <label for=""><input type="radio" name="sexo" value="">Mujer</label>
+              </div>
+              <hr>
+              <h6>Información de acceso</h6>
+              <input id="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico"><br>
+              <input id="contraseña" type="text" class="form-control textos" placeholder="Introduzca una contraseña"><br>
+              <input id="contraseña_Verificada" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
+              <hr>
+              <div class="text-center">
+                <label><input type="checkbox" name="" value="">Acepto términos y condiciones</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <a type="button" class="btn btn-primary" href="pagina-usuario.html">Crear cuenta</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Modal crear cuenta empresarial-->
+  <div class="modal fade" id="cuenta-Empresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Crea una cuenta empresarial en <b>Palacio´s</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="">
+            <h6>Información Básica</h6>
+            <input id="nombre-Empresa" type="text" class="form-control textos" placeholder="Nombre de empresa"><br>
+            <input id="sitio-Empresa" type="text" class="form-control textos" placeholder="Sitio Web"><br>
+            <textarea id="descripción-Empresa" class="form-control textos" rows="4" cols="5" placeholder="Descripción de la empresa"></textarea>
+            <hr>
+            <h6>Información Detallada</h6>
+            <input id="producto-empresa" type="text" class="form-control textos" placeholder="Producto que proporciona"><br>
+            <input id="formaVenta" type="text" class="form-control textos" placeholder="Forma de venta"><br>
+            <select class="form-control textos" name="">
+              <option value="">Plan que contrata</option>
+              <option value="basico">Básico 100$</option>
+              <option value="estandar">Estandar 250$</option>
+              <option value="premium">Premium 600$</option>
+            </select>
+            <hr>
+            <h6>Información de Acceso</h6>
+            <input id="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico"><br>
+            <input id="contraseña" type="text" class="form-control textos" placeholder="Introduzca una contraseña"><br>
+            <input id="contraseña_Verificada" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
+            <hr>
+            <div class="text-center">
+              <label><input type="checkbox" name="" value="">Acepto términos y condiciones</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <a type="button" class="btn btn-primary" href="#">Crear cuenta</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="wrapper">
 
     <!-- Barra lateral -->
     <ul id="slide-opciones" class="sidebar navbar-nav" >
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+      <li  class="nav-item">
+        <a class="nav-link" onclick="mostrarCategoria('contenido-Principal')" href="index.html">
           <i class="fas fa-fw fa-archive"></i>
-          <span>Principal</span>
-        </a>
+          <span>Principal</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -135,27 +227,19 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Categorias</h6>
-          <a class="dropdown-item" href="forgot-password.html">Hogar</a>
-          <a class="dropdown-item" href="login.html">Salud y Fitness</a>
-          <a class="dropdown-item" href="register.html">Deporte</a>
-          <a class="dropdown-item" href="forgot-password.html">Tecnología</a>
-          <a class="dropdown-item" href="forgot-password.html">Accesorios</a>
-          <a class="dropdown-item" href="forgot-password.html">Moda</a>
-          <a class="dropdown-item" href="forgot-password.html">Belleza</a>
-          <a class="dropdown-item" href="forgot-password.html">Mantenimiento</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('hogar')" href="#">Hogar</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('salud')" href="#">Salud</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('deporte')" href="#">Deporte</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('tecnologia')" href="#">Tecnología</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('accesorio')" href="#">Accesorios</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('moda')" href="#">Moda</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('belleza')" href="#">Belleza</a>
+          <a class="dropdown-item" onclick="mostrarCategoria('mantenimiento')" href="#">Mantenimiento</a>
           <div class="dropdown-divider"></div>
-          <!--<h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>-->
         </div>
       </li>
-      <!--<li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>-->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Carrito</span></a>
       </li>
@@ -244,205 +328,184 @@
 
         <!---->
         <div class="card mb-3">
-          <div class="card-header">
-            <ul class="nav justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link" href="#hogar">Hogar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#salud">Salud y Fitness</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#deporte">Deporte</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#tecnologia">Tecnología</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#accesorios">Accesorios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#ropa">Moda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Belleza">Belleza</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mantenimiento">Mantenimiento</a>
-              </li>
-            </ul>
+          <div class="card-header text-center">
+            <h5>Bienvenido a <b>Palacio´s</b> nos alegra verte por aquí</h5>
           </div>
-          <!--<div class="card-body">
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
         </div>
-
-        <div id="perfil-ususario" class="card mb-3">
+        <!--Principal-->
+        <div id="contenido-Principal" class="card mb-3">
           <div class="card-header">
-            <h2>Perfil</h2>
+            <h5><i class="fas fa-door-open"></i> Principal</h5>
           </div>
           <div class="card-body">
             <div class="row">
-              <!--Barra lateral-->
-              <div id="opcionPerfil" class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-8">
-                <div id="encabezado-perfil" class="row">
-                  <div id="imagen-perfil" class="" style="background-image: url('img/perfil.jpg')">
-                    <!-- style="background-image: url('img/perfil.jpg')"  -->
-                    <!--<img class="img-fluid rounded-circle" src="img/perfil.jpg" alt="">-->
-                  </div><!--Fin de la imagen del usuario-->
-                  <div id="nombre-perfil" class="text-center">
-                    Maria Juanita Panqueque Flores
-                  </div>
-                </div>
-                <hr>
-                <div  class="row">
-                  <div class="col-12">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                      <a class="btn btn-block btn-colorPerfil nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Perfil</a>
-                      <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Fotografía</a>
-                      <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cuenta</a>
-                      <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Favoritos</a>
+              <div id="bannerPrincipal" class="col-12" style="background-image: url(img/bannerPrincipal.jpg)">
+                <p id="parrafoBanner">Mira lo que tenemos para ti...</p>
+              </div>
+            </div>
+            <hr>
+            <div class="">
+              <h5>Agregado Recientemente</h5>
+              <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                  <div class="card text-center ">
+                    <div id="imagenProducto" class="card-img-top">
+                      <img src="img/productos/31-h.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body tarjeta">
+                      <div class="">
+                        <h5 id="titulo-Producto" class="card-title">Pala de jardin</h5>
+                      </div>
+                      <div id="descripcion-Producto" class="">
+                        <small><p class="card-text truncar-texto">Metro y medio de largo</p></small>
+                        <div class="card-text row">
+                          <div class="col-6">
+                            <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                          </div>
+                          <div class="col-6">
+                            <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 400.00</span> </small>
+                          </div>
+                        </div><hr>
+                        <div class="">
+                          <p class="card-text"><span id="precio-oferta">L 322.00</span></p>
+                        </div><hr>
+                      </div>
+                      <div class="">
+                        <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                      </div>
                     </div>
                   </div>
+                </div><!--Fin-->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                  <div class="card text-center ">
+                    <div id="imagenProducto" class="card-img-top">
+                      <img src="img/productos/32-h.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body tarjeta">
+                      <div class="">
+                        <h5 id="titulo-Producto" class="card-title">Metro</h5>
+                      </div>
+                      <div id="descripcion-Producto" class="">
+                        <small><p class="card-text truncar-texto">Metro de bolsa. Pequeño</p></small>
+                        <div class="card-text row">
+                          <div class="col-6">
+                            <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                          </div>
+                          <div class="col-6">
+                            <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 560.00</span> </small>
+                          </div>
+                        </div><hr>
+                        <div class="">
+                          <p class="card-text"><span id="precio-oferta">L 390.00</span></p>
+                        </div><hr>
+                      </div>
+                      <div class="">
+                        <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                      </div>
+                    </div>
+                  </div>
+                </div><!--Fin-->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                  <div class="card text-center ">
+                    <div id="imagenProducto" class="card-img-top">
+                      <img src="img/productos/9-d.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body tarjeta">
+                      <div class="">
+                        <h5 id="titulo-Producto" class="card-title">Tennis Nike</h5>
+                      </div>
+                      <div id="descripcion-Producto" class="">
+                        <small><p class="card-text truncar-texto">Color negro y variedad</p></small>
+                        <div class="card-text row">
+                          <div class="col-6">
+                            <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">10</span> Disponibles</small>
+                          </div>
+                          <div class="col-6">
+                            <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 1150.00</span> </small>
+                          </div>
+                        </div><hr>
+                        <div class="">
+                          <p class="card-text"><span id="precio-oferta">L 800.00</span></p>
+                        </div><hr>
+                      </div>
+                      <div class="">
+                        <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                      </div>
+                    </div>
+                  </div>
+                </div><!--Fin-->
+
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                  <div class="card text-center ">
+                    <div id="imagenProducto" class="card-img-top">
+                      <img src="img/productos/10-d.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body tarjeta">
+                      <div class="">
+                        <h5 id="titulo-Producto" class="card-title">Traje deportivo</h5>
+                      </div>
+                      <div id="descripcion-Producto" class="">
+                        <small><p class="card-text truncar-texto">Sudadera mas buzo deportivo</p></small>
+                        <div class="card-text row">
+                          <div class="col-6">
+                            <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">11</span> Disponibles</small>
+                          </div>
+                          <div class="col-6">
+                            <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 2550.00</span> </small>
+                          </div>
+                        </div><hr>
+                        <div class="">
+                          <p class="card-text"><span id="precio-oferta">L 1680.00</span></p>
+                        </div><hr>
+                      </div>
+                      <div class="">
+                        <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                      </div>
+                    </div>
+                  </div>
+                </div><!--Fin-->
+              </div><!--Final de la fila-->
+              <hr>
+              <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                  <img src="img/productos/samsungs10plus2.jpeg" class="img-fluid" alt="">
                 </div>
-                <hr>
+                <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 d-none d-sm-block text-center">
+                  <p>El móvil estrella de Samsung para este año cuenta con un diseño con esquinas redondeadas y unos marcos muy reducidos. Estamos ante un terminal que alberga una <b>pantalla Dynamic AMOLED</b> con un orificio en la parte superior derecha para las cámaras frontales. La parte trasera es de cristal y cuenta con un <b>módulo de tres cámaras y flash LED</b> dispuesto de forma horizontal. <b>No tiene sensor dactilar capacitivo.</b> </p>
+                </div>
               </div>
+              <hr>
+            </div>
 
-              <!--Lado derecho de los datos-->
-              <div id="InformacionPerfil" class="col-xl-9 col-lg-9 col-md-8 col-sm-6 col-8">
 
-                <div class="tab-content" id="v-pills-tabContent">
-                  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                    <!--perfil publico-->
-                    <div id="perfil-publico" class="">
-                      <fieldset>
-                        <legend>Perfil público</legend>
-                        <small>Añade informacion sobre ti</small>
-                      </fieldset>
-                      <hr>
-                      <div class="centradoFOrmulario">
-                        <label for="">Informacion básica</label>
-                        <br>
-                        <input id="nombre-usuario" type="text"  class="form-control" placeholder="Nombre Usuario">
-                        <input id="apellido-usuario" type="text"  class="form-control" placeholder="Apellido Usuario">
-
-                        <input id="titulo-Usuario" type="text" class="form-control" placeholder="Apodo o nombre opcional" aria-describedby="titulo-Usuario_descripcion">
-                        <small id="titulo-Usuario_descripcion" class="form-text text-muted">Añade un apodo o nombre opcional"</small>
-                        <br>
-                        <div class="form-group">
-                          <label for="descripcion-usuario">Descripción</label>
-                          <textarea id="descripcion-usuario" name="descripcion-usuario" class="form-control" rows="5" cols="70" aria-describedby="descripcion-Help"></textarea>
-                          <small id="descripcion-Help" class="form-text text-muted">Describe tus gustos y preferencias</small>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="centradoFOrmulario text-center">
-                        <button class="btn btn-color" type="button" name="button">Guardar</button>
-                      </div>
-                    </div><!--Fin de perfil publico-->
-                  </div>
-
-                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    <!--Fotografía-->
-                    <div id="fotografia-publica" class="">
-                      <fieldset>
-                        <legend>Fotografía</legend>
-                        <small>Añade una foto tuya al perfil</small>
-                      </fieldset>
-                      <hr>
-                      <div class="centradoFOrmulario">
-                        <h6>Vista previa de la imagen</h6>
-                        <div class="img-recuadroPrincipal">
-                          <div class="img-recuadroSecundario">
-                            <img src="img/anonymous_3.png" alt="">
-                          </div>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="centradoFOrmulario">
-                        <label for="cambiarFoto-usuario">Añadir o cambiar imagen:</label>
-                        <div class="input-group mb-3">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">No has seleccionado un archivo</label>
-                          </div>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="centradoFOrmulario text-center">
-                        <button class="btn btn-color" type="button" name="button">Guardar</button>
-                      </div>
-                    </div><!--Fin de fotografia publica-->
-                  </div>
-
-                  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    <!--Cuenta-->
-                    <div id="cuenta-publica" class="">
-                      <fieldset>
-                        <legend>Cuenta</legend>
-                        <small>Edita la configuración de tu cuenta y cambia la contraseña aquí</small>
-                      </fieldset>
-                      <hr>
-                      <div class="centradoFOrmulario">
-                        <label for="cuenta-correo">Correo electrónico:</label>
-                        <div class="input-group">
-                          <input id="cuenta-correo" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-                          <div class="input-group-append">
-                            <span type="button" class="btn input-group-text"  style="margin-bottom: 15px;"><i class="fas fa-pencil-alt"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="centradoFOrmulario">
-                        <label for="">Contraseña</label>
-                        <input id="contraseña-Actual" type="text" class="form-control" placeholder="Escribe la contraseña actual">
-                        <input id="contraseña-Actual" type="text" class="form-control" placeholder="Escribe la nueva contraseña">
-                        <input id="contraseña-nueva" type="text" class="form-control" placeholder="Escribe la nueva contraseña otra vez">
-                      </div>
-                      <hr>
-                      <div class="centradoFOrmulario text-center">
-                        <button class="btn btn-color" type="button" name="button">Cambiar la contraseña</button>
-                      </div>
-                    </div><!--Fin de la cuenta-->
-                  </div>
-
-                  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                    <!--Favoritos-->
-                    <div id="favoritos" class="">
-                      <div id="promociones-favoritas" class="">
-                        <fieldset>
-                          <legend>Promociones Favoritas</legend>
-                          <small>Las mejores promociones para ti</small>
-                        </fieldset>
-                        <hr>
-                        <div class="centradoFOrmulario">
-
-                        </div>
-                      </div>
-                      <div id="empresas-favoritas" class="">
-                        <fieldset>
-                          <legend>Empresas Favoritas</legend>
-                          <small>Empresas con los mejores productos a tu alcance</small>
-                        </fieldset>
-                        <hr>
-                        <div class="centradoFOrmulario">
-
-                        </div>
-                      </div>
-                    </div><!-- Fin de Favoritos-->
-                  </div>
-                </div><!--Fin del fill tabContent-->
-
-              </div><!--fin del  lado derecho de las barras-->
-            </div><!--Fin de la fila de la card-body -->
-          </div><!--Fin del card-body-->
+            <div class="">
+              <h5>Los más destacados</h5>
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="background-image:url(img/principal/celular-1.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/iphone-1.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/laptop-1.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/laptop-2.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/realidadVirtual-2.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/realidadVirtual.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/sillon-1.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/sillon-2.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/sillon-3.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(img/principal/sillon-4.jpg)"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+              <hr>
+            </div><!--FIn del contenedpr del swiper-->
+          </div><!--Fin del card body-->
           <div class="card-footer">
 
           </div>
         </div>
 
         <!--Productos de categoria Hogar-->
-        <div id="hogar" class="card mb-3">
+        <div id="categoria-hogar" class="card mb-3">
           <div class="card-header">
             <h5><i class="fas fa-home"></i> Hogar</h5>
           </div>
@@ -451,77 +514,135 @@
             <div id="hogarWrapper" class="row">
               <!--columnas-->
               <!--Primer Producto-->
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center shadow">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen" >
+                <div class="card text-center ">
                   <div id="imagenProducto" class="card-img-top">
-                    <img src="../images/encontrar/hogar.jpg" class="img-fluid" alt="...">
+                    <img src="img/productos/1.jpg" class="img-fluid" alt="...">
                   </div>
                   <div class="card-body tarjeta">
                     <div class="">
                       <h5 id="titulo-Producto" class="card-title">Mueble</h5>
                     </div>
                     <div id="descripcion-Producto" class="">
-                      <p class="card-text">Atractivo Mueble de Sala</p>
+                      <small><p class="card-text truncar-texto">Mueble de esquina</p></small>
                       <div class="card-text row">
                         <div class="col-6">
                           <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
                         </div>
                         <div class="col-6">
-                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 350.00</span> </small>
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 1250.00</span> </small>
                         </div>
                       </div><hr>
                       <div class="">
-                        <p class="card-text"><span id="precio-oferta">L 150.00</span></p>
+                        <p class="card-text"><span id="precio-oferta">L 950.00</span></p>
                       </div><hr>
                     </div>
-                    <a href="#" class="btn btn-anadirCarrito">Añadir al carrito</a>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div><!--FIn de primer producto-->
+              </div><!--FIn-->
 
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/2.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Mueble</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                    <small><p class="card-text truncar-texto">Atractivo Mueble de Sala</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 3500.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 2650.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/3.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Muebles</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Muebles para sala de estar</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 1050.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 750.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/hogar.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/4.webp" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Comedor</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Atractivo comedor para 6 personas</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 4550.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 4000.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
+              </div><!--Fin-->
+
             </div> <!--Fin de la fila-->
 
           </div>
           <div class="card-footer">
-
           </div>
         </div>
 
         <!--Productos de categoria Salud-->
-        <div id="salud" class="card mb-3">
+        <div id="categoria-salud" class="card mb-3">
           <div class="card-header">
             <h5><i class="fas fa-heartbeat"></i> Salud</h5>
           </div>
@@ -529,47 +650,135 @@
             <!--Fila contenedora de productos-->
             <div id="saludWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/hogar3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen" >
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/5-s.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Balanza</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Para jovenes y adultos</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 850.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 600.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/hogar3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--FIn-->
+
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen" >
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/6-s.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Termómetro Infantil</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Para niños hastas los 10 años</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 250.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 190.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/hogar3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--FIn-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen" >
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/7-s.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Jeringa 5ml</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Para medicina o jarabes</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 50.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 29.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div><!--FIn-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen" >
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/8-s.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Jeringa 10ml</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Para inyección de bitaminas</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 85.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 62.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--FIn-->
+            </div><!--Fin de la fila-->
           </div>
           <div class="card-footer">
-
           </div>
         </div>
+
         <!--Productos de categoria Deporte-->
-        <div id="deporte" class="card mb-3">
+        <div id="categoria-deporte" class="card mb-3">
           <div class="card-header">
             <h5><i class="fas fa-baseball-ball"></i> Deporte</h5>
           </div>
@@ -577,47 +786,135 @@
             <!--Fila contenedora de productos-->
             <div id="deporteWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/deporte.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/9-d.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Tennis Nike</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Color negro y variedad</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">10</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 1150.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 800.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/deporte.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/10-d.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Traje deportivo</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Sudadera mas buzo deportivo</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">11</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 2550.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 1680.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/deporte.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/11-d.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Pesa 5 lbrs</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Pesas color azul, negro, rojo.</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">27</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 350.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 280.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div><!--Fin-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/12-d.webp" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Sudadera Nike</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Perfectas para ejercitar</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 845.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 599.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+
+            </div><!--Fin de fila-->
           </div>
           <div class="card-footer">
 
           </div>
         </div>
+
         <!--Productos de categoria Tecnologia-->
-        <div id="tecnologia" class="card mb-3">
+        <div id="categoria-tecnologia" class="card mb-3">
           <div class="card-header">
             <h5><i class="fas fa-desktop"></i> Tecnología</h5>
           </div>
@@ -627,47 +924,131 @@
             <!--Fila contenedora de productos-->
             <div id="tecnoWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/tecnologia.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/13-t.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">MackBook Pro</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Core i7, 128 SDD, 16 de ram</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">8</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 32000.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 25600.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/tecnologia.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/14-.webp" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Samsung Galaxy S10 +</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">6 ram, 128 rom, camara 32 mpx</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 22355.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 15000.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/tecnologia.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/15-t.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Samsung galaxy watch</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Reloj inteligente</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 8500.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 6945.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/16-t.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Camara Digital Nikon</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Reflex D5300 18-55 Mm 24.2 Full Hd</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 36,124.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 28,899.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+
+            </div><!--Fin de fila-->
           </div>
           <div class="card-footer">
-
           </div>
         </div>
+
         <!--Productos de categoria Accesorios-->
-        <div id="accesorios" class="card mb-3">
+        <div id="categoria-accesorios" class="card mb-3">
           <div class="card-header">
             <h5><i class="fas fa-glasses"></i> Accesorios</h5>
           </div>
@@ -675,95 +1056,395 @@
             <!--Fila contenedora de productos-->
             <div id="accesoriosWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/accesorios.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/17-a.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Popscket</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Accesorios Para Celular + Soporte Clip Promocion</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">42</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 220.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 135.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/accesorios.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/18-a.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Protector de cable</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Línea de carga Línea de auriculares Anti ruptura Funda protectora.</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 860.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 715.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/banner/accesorios.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/19-a.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Mochila para fotografo</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Espacio para camara y 8 lentes mas cargador</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 12000</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 8990.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/20-a.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Funda para laptop</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">15", 14", 17"</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">18</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 330.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 280.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+
+            </div><!--Fin-->
           </div>
           <div class="card-footer">
-
           </div>
         </div>
-        <!--Productos de categoria Ropa-->
-        <div id="ropa" class="card mb-3">
+
+        <!--Productos de categoria moda-->
+        <div id="categoria-moda" class="card mb-3">
           <div class="card-header">
-            <h5><i class="fas fa-tshirt"></i> Ropa</h5>
+            <h5><i class="fas fa-tshirt"></i> Moda</h5>
           </div>
           <div class="card-body">
             <!--Fila contenedora de productos-->
             <div id="ropaWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/ropa.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/21-m.webp" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Gafas LANBO</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Lentes para mujer y hombre</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">11</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 960.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 700.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/ropa.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/22-m.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Camisa Blanca</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Camisa blanca semiformal</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">18</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 330.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 150.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/ropa.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/23-m.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Bestido completo</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Bestido de noche</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">18</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 590.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 300.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/24-m.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Camiseta Polo</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Color necgo con naranja</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">60</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 420.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 280.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+
+            </div><!--Fin-->
           </div>
           <div class="card-footer">
+          </div>
+        </div>
 
+        <!--Productos de categoria Belleza-->
+        <div id="categoria-belleza" class="card mb-3">
+          <div class="card-header">
+            <h5><i class="fas fa-spa"></i> Belleza</h5>
+          </div>
+          <div class="card-body">
+            <!--Fila contenedora de productos-->
+            <div id="hogarWrapper" class="row">
+              <!--columnas-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/25-b.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Cepillo de maquillaje</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">MAANGE 5 piezas lollipop cepillo de maquillaje</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">60</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 420.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 350.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/26-b.png" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Lapiz Labial</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Colores piel y profundos</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">60</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 310.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 250.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/27-b.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Corrector Facial</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Popfeel maquillaje</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">60</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 65.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 49.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/28-b.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Cremas faciales</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Color necgo con naranja</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 325.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 215.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+            </div> <!--Fin de la fila-->
+
+          </div>
+          <div class="card-footer">
           </div>
         </div>
         <!--Productos de categoria Mantenimiento-->
-        <div id="mantenimiento" class="card mb-3">
+        <div id="categoria-mantenimiento" class="card mb-3">
           <div class="card-header">
             <h5><i class="fas fa-tools"></i> Mantenimiento</h5>
           </div>
@@ -771,46 +1452,128 @@
             <!--Fila contenedora de productos-->
             <div id="tecnoWrapper" class="row">
               <!--columnas-->
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/herramientas.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/29-h.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Martillo</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Goma especial de agarre</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 325.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 265.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/herramientas.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/30-h.webp" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Segueta</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Hoja fina de corte</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 260.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 195.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="card text-center">
-                  <img src="../images/encontrar/herramientas.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/31-h.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Pala de jardin</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Metro y medio de largo</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 400.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 322.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/32-h.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Metro</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Metro de bolsa. Pequeño</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 560.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 390.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+
+            </div><!--FIn-->
           </div>
           <div class="card-footer">
-
           </div>
         </div>
-
 
       </div>
       <!-- /.container-fluid -->

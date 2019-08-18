@@ -46,60 +46,12 @@
     </form>
   </nav><!--Fin de la barra de Barra de Navegacion-->
 
-  <!-- Modal -->
-  <div class="modal fade" id="iniciarSesion-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">¡Inicia Sesión en Palacio´s!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <div class="form-label-group">
-                <input type="email" id="email" class="form-control textos" placeholder="Dirección Correo Electrónico" required="required" autofocus="autofocus">
-                <label for="email">Dirección Correo Electrónico</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-label-group">
-                <input type="password" id="contraseña" class="form-control textos" placeholder="Contraseña" required="required">
-                <label for="contraseña">Contraseña</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="remember-me">
-                  ¿Recordar Contraseña?
-                </label>
-              </div>
-            </div>
-          </form>
-          <div class="text-center">
-            <a class="d-block small mt-3" href="register.html">Registrar una cuenta</a>
-            <a class="d-block small" href="forgot-password.html">Olvido su contraseña?</a>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Iniciar Sesión</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
   <div id="wrapper">
 
     <!-- Barra lateral -->
     <ul id="slide-opciones" class="sidebar navbar-nav" >
       <li  class="nav-item">
-        <a class="nav-link" onclick="mostrarCategoria('contenido-Principal')" href="#">
+        <a class="nav-link" onclick="mostrarCategoria('contenido-Principal')" href="pagina-usuario.html">
           <i class="fas fa-fw fa-archive"></i>
           <span>Principal</span></a>
       </li>
@@ -122,7 +74,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Carrito</span></a>
       </li>
@@ -141,84 +93,6 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <!--<ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Overview</li>
-        </ol>-->
-
-        <!-- Icon Cards-->
-        <!--<div class="row">
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-primary o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-comments"></i>
-                </div>
-                <div class="mr-5">26 New Messages!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-warning o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-list"></i>
-                </div>
-                <div class="mr-5">11 New Tasks!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-success o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-shopping-cart"></i>
-                </div>
-                <div class="mr-5">123 New Orders!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      -->
-
       <!---->
       <div class="card mb-3">
         <div class="card-header text-center">
@@ -234,10 +108,146 @@
         <div class="card-body">
           <div class="row">
             <div id="bannerPrincipal" class="col-12" style="background-image: url(img/bannerPrincipal.jpg)">
-
+              <p id="parrafoBanner">Mira lo que tenemos para ti...</p>
             </div>
           </div>
+          <hr>
           <div class="">
+            <h5>Agregado Recientemente</h5>
+            <div class="row">
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/31-h.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Pala de jardin</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Metro y medio de largo</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 400.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 322.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/32-h.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Metro</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Metro de bolsa. Pequeño</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 560.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 390.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/9-d.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Tennis Nike</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Color negro y variedad</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">10</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 1150.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 800.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
+                <div class="card text-center ">
+                  <div id="imagenProducto" class="card-img-top">
+                    <img src="img/productos/10-d.jpg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="card-body tarjeta">
+                    <div class="">
+                      <h5 id="titulo-Producto" class="card-title">Traje deportivo</h5>
+                    </div>
+                    <div id="descripcion-Producto" class="">
+                      <small><p class="card-text truncar-texto">Sudadera mas buzo deportivo</p></small>
+                      <div class="card-text row">
+                        <div class="col-6">
+                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">11</span> Disponibles</small>
+                        </div>
+                        <div class="col-6">
+                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 2550.00</span> </small>
+                        </div>
+                      </div><hr>
+                      <div class="">
+                        <p class="card-text"><span id="precio-oferta">L 1680.00</span></p>
+                      </div><hr>
+                    </div>
+                    <div class="">
+                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
+                    </div>
+                  </div>
+                </div>
+              </div><!--Fin-->
+            </div><!--Final de la fila-->
+            <hr>
+            <div class="row">
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <img src="img/productos/samsungs10plus2.jpeg" class="img-fluid" alt="">
+              </div>
+              <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 d-none d-sm-block text-center">
+                <p>El móvil estrella de Samsung para este año cuenta con un diseño con esquinas redondeadas y unos marcos muy reducidos. Estamos ante un terminal que alberga una <b>pantalla Dynamic AMOLED</b> con un orificio en la parte superior derecha para las cámaras frontales. La parte trasera es de cristal y cuenta con un <b>módulo de tres cámaras y flash LED</b> dispuesto de forma horizontal. <b>No tiene sensor dactilar capacitivo.</b> </p>
+              </div>
+            </div>
+            <hr>
+          </div>
+
+
+          <div class="">
+            <h5>Los más destacados</h5>
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide" style="background-image:url(img/principal/celular-1.jpg)"></div>
@@ -254,8 +264,9 @@
               <!-- Add Pagination -->
               <div class="swiper-pagination"></div>
             </div>
-          </div>
-        </div>
+            <hr>
+          </div><!--FIn del contenedpr del swiper-->
+        </div><!--Fin del card body-->
         <div class="card-footer">
 
         </div>
@@ -287,6 +298,7 @@
                     <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Fotografía</a>
                     <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cuenta</a>
                     <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Favoritos</a>
+                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" href="index.html">Cerrar Sesión</a>
                   </div>
                 </div>
               </div>
@@ -446,7 +458,7 @@
                     <h5 id="titulo-Producto" class="card-title">Mueble</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Mueble de esquina</p></small>
+                    <small><p class="card-text truncar-texto">Mueble de esquina</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -476,7 +488,7 @@
                     <h5 id="titulo-Producto" class="card-title">Mueble</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                  <small><p class="card-text">Atractivo Mueble de Sala</p></small>
+                  <small><p class="card-text truncar-texto">Atractivo Mueble de Sala</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -506,7 +518,7 @@
                     <h5 id="titulo-Producto" class="card-title">Muebles</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Muebles para sala de estar</p></small>
+                    <small><p class="card-text truncar-texto">Muebles para sala de estar</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -536,7 +548,7 @@
                     <h5 id="titulo-Producto" class="card-title">Comedor</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Atractivo comedor para 6 personas</p></small>
+                    <small><p class="card-text truncar-texto">Atractivo comedor para 6 personas</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -583,7 +595,7 @@
                     <h5 id="titulo-Producto" class="card-title">Balanza</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Para jovenes y adultos</p></small>
+                    <small><p class="card-text truncar-texto">Para jovenes y adultos</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -607,14 +619,14 @@
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen" >
               <div class="card text-center ">
                 <div id="imagenProducto" class="card-img-top">
-                  <img src="img/productos/1.jpg" class="img-fluid" alt="...">
+                  <img src="img/productos/6-s.jpg" class="img-fluid" alt="...">
                 </div>
                 <div class="card-body tarjeta">
                   <div class="">
                     <h5 id="titulo-Producto" class="card-title">Termómetro Infantil</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Para niños hastas los 10 años</p></small>
+                    <small><p class="card-text truncar-texto">Para niños hastas los 10 años</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -644,7 +656,7 @@
                     <h5 id="titulo-Producto" class="card-title">Jeringa 5ml</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Para medicina o jarabes</p></small>
+                    <small><p class="card-text truncar-texto">Para medicina o jarabes</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -674,7 +686,7 @@
                     <h5 id="titulo-Producto" class="card-title">Jeringa 10ml</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Para inyección de bitaminas</p></small>
+                    <small><p class="card-text truncar-texto">Para inyección de bitaminas</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -718,7 +730,7 @@
                     <h5 id="titulo-Producto" class="card-title">Tennis Nike</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Color negro y variedad</p></small>
+                    <small><p class="card-text truncar-texto">Color negro y variedad</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">10</span> Disponibles</small>
@@ -748,7 +760,7 @@
                     <h5 id="titulo-Producto" class="card-title">Traje deportivo</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Sudadera mas buzo deportivo</p></small>
+                    <small><p class="card-text truncar-texto">Sudadera mas buzo deportivo</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">11</span> Disponibles</small>
@@ -778,7 +790,7 @@
                     <h5 id="titulo-Producto" class="card-title">Pesa 5 lbrs</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Pesas color azul, negro, rojo.</p></small>
+                    <small><p class="card-text truncar-texto">Pesas color azul, negro, rojo.</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">27</span> Disponibles</small>
@@ -808,7 +820,7 @@
                     <h5 id="titulo-Producto" class="card-title">Sudadera Nike</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Perfectas para ejercitar</p></small>
+                    <small><p class="card-text truncar-texto">Perfectas para ejercitar</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -855,7 +867,7 @@
                     <h5 id="titulo-Producto" class="card-title">MackBook Pro</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Core i7, 128 SDD, 16 de ram</p></small>
+                    <small><p class="card-text truncar-texto">Core i7, 128 SDD, 16 de ram</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">8</span> Disponibles</small>
@@ -884,7 +896,7 @@
                     <h5 id="titulo-Producto" class="card-title">Samsung Galaxy S10 +</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">6 ram, 128 rom, camara 32 mpx</p></small>
+                    <small><p class="card-text truncar-texto">6 ram, 128 rom, camara 32 mpx</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -913,7 +925,7 @@
                     <h5 id="titulo-Producto" class="card-title">Samsung galaxy watch</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Reloj inteligente</p></small>
+                    <small><p class="card-text truncar-texto">Reloj inteligente</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -942,7 +954,7 @@
                     <h5 id="titulo-Producto" class="card-title">Camara Digital Nikon</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Reflex D5300 18-55 Mm 24.2 Full Hd</p></small>
+                    <small><p class="card-text truncar-texto">Reflex D5300 18-55 Mm 24.2 Full Hd</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -965,7 +977,6 @@
           </div><!--Fin de fila-->
         </div>
         <div class="card-footer">
-
         </div>
       </div>
       <!--Productos de categoria Accesorios-->
@@ -987,7 +998,7 @@
                     <h5 id="titulo-Producto" class="card-title">Popscket</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Accesorios Para Celular + Soporte Clip Promocion</p></small>
+                    <small><p class="card-text truncar-texto">Accesorios Para Celular + Soporte Clip Promocion</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">42</span> Disponibles</small>
@@ -1016,7 +1027,7 @@
                     <h5 id="titulo-Producto" class="card-title">Protector de cable</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Línea de carga Línea de auriculares Anti ruptura Funda protectora.</p></small>
+                    <small><p class="card-text truncar-texto">Línea de carga Línea de auriculares Anti ruptura Funda protectora.</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -1045,7 +1056,7 @@
                     <h5 id="titulo-Producto" class="card-title">Mochila para fotografo</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Espacio para camara y 8 lentes mas cargador</p></small>
+                    <small><p class="card-text truncar-texto">Espacio para camara y 8 lentes mas cargador</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">50</span> Disponibles</small>
@@ -1074,7 +1085,7 @@
                     <h5 id="titulo-Producto" class="card-title">Funda para laptop</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">15", 14", 17"</p></small>
+                    <small><p class="card-text truncar-texto">15", 14", 17"</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">18</span> Disponibles</small>
@@ -1097,7 +1108,6 @@
           </div><!--Fin-->
         </div>
         <div class="card-footer">
-
         </div>
       </div>
       <!--Productos de categoria moda-->
@@ -1119,7 +1129,7 @@
                     <h5 id="titulo-Producto" class="card-title">Gafas LANBO</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Lentes para mujer y hombre</p></small>
+                    <small><p class="card-text truncar-texto">Lentes para mujer y hombre</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">11</span> Disponibles</small>
@@ -1148,7 +1158,7 @@
                     <h5 id="titulo-Producto" class="card-title">Camisa Blanca</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Camisa blanca semiformal</p></small>
+                    <small><p class="card-text truncar-texto">Camisa blanca semiformal</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">18</span> Disponibles</small>
@@ -1177,7 +1187,7 @@
                     <h5 id="titulo-Producto" class="card-title">Bestido completo</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Bestido de noche</p></small>
+                    <small><p class="card-text truncar-texto">Bestido de noche</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">18</span> Disponibles</small>
@@ -1206,7 +1216,7 @@
                     <h5 id="titulo-Producto" class="card-title">Camiseta Polo</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Color necgo con naranja</p></small>
+                    <small><p class="card-text truncar-texto">Color necgo con naranja</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">60</span> Disponibles</small>
@@ -1229,7 +1239,6 @@
           </div><!--Fin-->
         </div>
         <div class="card-footer">
-
         </div>
       </div>
 
@@ -1253,7 +1262,7 @@
                     <h5 id="titulo-Producto" class="card-title">Cepillo de maquillaje</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">MAANGE 5 piezas lollipop cepillo de maquillaje</p></small>
+                    <small><p class="card-text truncar-texto">MAANGE 5 piezas lollipop cepillo de maquillaje</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">60</span> Disponibles</small>
@@ -1282,7 +1291,7 @@
                     <h5 id="titulo-Producto" class="card-title">Lapiz Labial</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Colores piel y profundos</p></small>
+                    <small><p class="card-text truncar-texto">Colores piel y profundos</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">60</span> Disponibles</small>
@@ -1311,7 +1320,7 @@
                     <h5 id="titulo-Producto" class="card-title">Corrector Facial</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Popfeel maquillaje</p></small>
+                    <small><p class="card-text truncar-texto">Popfeel maquillaje</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">60</span> Disponibles</small>
@@ -1340,7 +1349,7 @@
                     <h5 id="titulo-Producto" class="card-title">Cremas faciales</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Color necgo con naranja</p></small>
+                    <small><p class="card-text truncar-texto">Color necgo con naranja</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
@@ -1363,7 +1372,6 @@
 
         </div>
         <div class="card-footer">
-
         </div>
       </div>
 
@@ -1386,7 +1394,7 @@
                     <h5 id="titulo-Producto" class="card-title">Martillo</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Goma especial de agarre</p></small>
+                    <small><p class="card-text truncar-texto">Goma especial de agarre</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
@@ -1415,7 +1423,7 @@
                     <h5 id="titulo-Producto" class="card-title">Segueta</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Hoja fina de corte</p></small>
+                    <small><p class="card-text truncar-texto">Hoja fina de corte</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
@@ -1444,7 +1452,7 @@
                     <h5 id="titulo-Producto" class="card-title">Pala de jardin</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Metro y medio de largo</p></small>
+                    <small><p class="card-text truncar-texto">Metro y medio de largo</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
@@ -1473,7 +1481,7 @@
                     <h5 id="titulo-Producto" class="card-title">Metro</h5>
                   </div>
                   <div id="descripcion-Producto" class="">
-                    <small><p class="card-text">Metro de bolsa. Pequeño</p></small>
+                    <small><p class="card-text truncar-texto">Metro de bolsa. Pequeño</p></small>
                     <div class="card-text row">
                       <div class="col-6">
                         <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">6</span> Disponibles</small>
