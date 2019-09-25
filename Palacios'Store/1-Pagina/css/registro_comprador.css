@@ -1,0 +1,41 @@
+.btn-registro{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: var(--primary-gradient);
+    padding: .8rem 5rem;
+}
+.anuncio{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: whitesmoke;
+    font-size: .9rem;
+    border-radius: 4rem;
+    color: black !important;
+}
+.panel .row .logo{
+    margin-top: .9rem;
+    width: 130px;
+    height: 43px;
+}
+.infoBasica{
+    color: white;
+}
+.textos{
+    border: 0;
+    border-bottom: 1px solid #00d8ff;
+}
+#fechaNacimiento select{
+    border-radius: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: rgb(100, 100, 100);
+}
+.close{
+    color: white !important;
+    font-size: 1.9rem !important; 
+    float: left !important;
+}
+.superior{
+    height: 6vw !important;
+    width: 200px;
+}

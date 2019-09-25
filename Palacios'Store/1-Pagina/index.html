@@ -45,171 +45,22 @@
       </div>
     </form>
 
-    <!-- Barra de navegación -->
+    <!-- onclick="window.location.href='registro_comprador.html'" target="_blank"     salir 3 carpetas-->
+
     <ul class="nav navbar-nav ml-auto ml-md-0">
 
       <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link textWhite" href="login.html" id="iniciarSesion" role="button" aria-expanded="false" data-toggle="modal" data-target="#iniciarSesion-Modal">
+        <a class="nav-link textWhite" href="login.html" id="iniciarSesion">
           <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
-          <!--<span class="badge badge-danger">7</span>-->
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-          <a class="dropdown-item" href="#"><i class="fas fa-chalkboard-teacher"></i> Cliente</a>
-          <a class="dropdown-item" href="#"><i class="fas fa-building"></i> Empresarial</a>
-        </div>
       </li>
       <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle textWhite" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle textWhite" href="registro.html" id="registrate">
           <i class="fas fa-user-circle fa-fw"></i> Regrístrate
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cuenta-Usuario"><i class="fas fa-chalkboard-teacher"></i> Cliente</a></a>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cuenta-Empresa"><i class="fas fa-building"></i> Empresarial</a>
-        </div>
       </li>
     </ul>
-
   </nav><!--Fin de la barra de Barra de Navegacion-->
-
-  <!-- Modal iniciar sesión-->
-  <div class="modal fade" id="iniciarSesion-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">¡Inicia Sesión en Palacio´s!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <div class="form-label-group">
-                <input type="email" id="email" class="form-control textos" placeholder="Dirección Correo Electrónico" required="required" autofocus="autofocus">
-                <label for="email">Dirección Correo Electrónico</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-label-group">
-                <input type="password" id="contraseña" class="form-control textos" placeholder="Contraseña" required="required">
-                <label for="contraseña">Contraseña</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="remember-me">
-                  ¿Recordar Contraseña?
-                </label>
-              </div>
-            </div>
-          </form>
-          <div class="text-center">
-            <a class="d-block small mt-3" href="#">Registrar una cuenta</a>
-            <a class="d-block small" href="#">Olvido su contraseña?</a>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <a type="button" class="btn btn-primary" href="pagina-usuario.html">Iniciar Sesión</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Crear cuenta usuario-->
-  <div class="modal fade" id="cuenta-Usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Crea una cuenta de usuario en <b>Palacio´s</b></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h6>Información básica</h6>
-          <form class="">
-            <hr>
-            <div class="">
-              <input id="nombre" type="text" class="form-control textos" placeholder="Nombre"><br>
-              <input id="apellido" type="text" class="form-control textos" placeholder="Apellido"><br>
-              <label for="">Fecha de nacimiento  </label><br>
-              <div class="text-center">
-                <select id="dia_N" class="from-control textos" name=""></select>
-                <select id="mes_N" class="from-control textos" name=""></select>
-                <select id="anio_N" class="from-control textos" name=""></select>
-              </div>
-              <br><br>
-              <label for="">Género</label><br>
-              <div class="text-center">
-                <label for=""><input type="radio" name="sexo" value="">Hombre</label>
-                <label for=""><input type="radio" name="sexo" value="">Mujer</label>
-              </div>
-              <hr>
-              <h6>Información de acceso</h6>
-              <input id="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico"><br>
-              <input id="contraseña" type="text" class="form-control textos" placeholder="Introduzca una contraseña"><br>
-              <input id="contraseña_Verificada" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
-              <hr>
-              <div class="text-center">
-                <label><input type="checkbox" name="" value="">Acepto términos y condiciones</label>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <a type="button" class="btn btn-primary" href="pagina-usuario.html">Crear cuenta</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal crear cuenta empresarial-->
-  <div class="modal fade" id="cuenta-Empresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Crea una cuenta empresarial en <b>Palacio´s</b></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form class="">
-            <h6>Información Básica</h6>
-            <input id="nombre-Empresa" type="text" class="form-control textos" placeholder="Nombre de empresa"><br>
-            <input id="sitio-Empresa" type="text" class="form-control textos" placeholder="Sitio Web"><br>
-            <textarea id="descripción-Empresa" class="form-control textos" rows="4" cols="5" placeholder="Descripción de la empresa"></textarea>
-            <hr>
-            <h6>Información Detallada</h6>
-            <input id="producto-empresa" type="text" class="form-control textos" placeholder="Producto que proporciona"><br>
-            <input id="formaVenta" type="text" class="form-control textos" placeholder="Forma de venta"><br>
-            <select class="form-control textos" name="">
-              <option value="">Plan que contrata</option>
-              <option value="basico">Básico 100$</option>
-              <option value="estandar">Estandar 250$</option>
-              <option value="premium">Premium 600$</option>
-            </select>
-            <hr>
-            <h6>Información de Acceso</h6>
-            <input id="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico"><br>
-            <input id="contraseña" type="text" class="form-control textos" placeholder="Introduzca una contraseña"><br>
-            <input id="contraseña_Verificada" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
-            <hr>
-            <div class="text-center">
-              <label><input type="checkbox" name="" value="">Acepto términos y condiciones</label>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <a type="button" class="btn btn-primary" href="pagina-empresa.html">Crear cuenta</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div id="wrapper">
 

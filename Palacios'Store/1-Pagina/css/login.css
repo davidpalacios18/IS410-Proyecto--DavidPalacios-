@@ -1,15 +1,134 @@
-/**/
-body{
-  background-image: url(../img/login.jpg) !important;
-  background-size: cover;
+
+html, body{
+    height: 100%;
+    /*overflow: hidden;*/
+    background: #00d8ff;
+    background: linear-gradient(to right, #009db9, #11dbff);
 }
-.btn-color{
-  color: #fff;
-  background-color: #00D8FF;
+.superior{
+    height: 8vw;
+    width: 200px;
 }
 
-.textos{
-  border: 0;
-  border-bottom: 1px solid  #00D8FF;
-  text-align: left;
+/*Variables*/
+:root{
+    --primary-gradient: linear-gradient(to right, #4e4376, #2b5876);
+    --store-gradient: linear-gradient(to right, #009db9, #11dbff);
+    --text-color: #F7F9F9;
+}
+.panel .row #logo{
+    margin-top: .9rem;
+    margin-left: 1.4rem;
+    width: 130px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 920px !important;
+}
+.row{
+    height: 100%;
+    background:#fff;
+}
+.wave{
+    background: url('../img/assets/Wave.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wave h4{
+    text-align: left;
+    padding: 0 2rem;
+    color: whitesmoke;
+}
+.carousel .carousel-inner .carousel-item .login_img{
+    float: right;
+    width: 400px;
+    height: 300px;
+}
+
+.seguir{
+    padding: 0 1.4rem;
+    padding-top: 1.4rem;
+    color:whitesmoke;
+    position: relative;
+    font-size: 1.1rem;
+}
+.seguir a i{
+    color: whitesmoke;
+    font-size: 1.1rem;
+}
+
+/* Formulario */
+.botones{
+    padding: .5rem 1.5rem !important;
+    border: none !important;
+    border-radius: 4rem !important;
+    background: #009db9 !important;
+    color: whitesmoke;
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.login .btn-signup {
+    
+    background: var(--primary-gradient);
+    float: right;
+    margin: 1rem;
+}
+.login .btn-login{
+    background: var(--primary-gradient);
+    padding: .8rem 5rem;
+}
+.titulos{
+    margin-bottom: 2.2rem;
+}
+.close{
+    color: white !important;
+    font-size: 1.9rem !important; 
+    float: left !important;
+}
+form{
+    margin-top: 1.9rem;
+}
+form h3, form h6{
+    padding: 0;
+    margin: 0;
+}
+form h6{
+    color: #444444d2;
+}
+form .form-group{
+    text-align: left;
+    margin-top: .9rem;
+    margin-right: .2rem;
+    margin-left: .2rem;
+    border-radius: 3rem;
+}
+
+form .form-group .form-input{
+    padding: .5rem .1rem;
+    background: transparent;
+    border: none;
+    font-size: .9rem;
+    overflow: hidden;
+}
+form input:focus{
+    outline: none;
+}
+form .datos{
+    border: 0;
+    border-bottom:1px solid #00d8ff;
+
+}
+
+form .input-icon{
+    display: inline;
+    color: #009db9;
+}
+
+form .olvidar-contraseña{
+    font-size: 0.8rem;
+    margin-top: .8rem;
 }
