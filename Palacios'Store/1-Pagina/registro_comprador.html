@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro Comprador</title>
+    <link rel="icon" href="../iconos/icono-Blanco.png" type="image/x-icon">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -29,18 +30,23 @@
                     <h6>Información básica</h6><hr>
                     <!-- Formulario -->
                     <form>
-                        <div class="form-group"> 
-                            <input id="nombreUsuario" type="text" class="form-control textos" placeholder="Nombre">
-                            <br>
-                            <input id="apellidoUsuario" type="text" class="form-control textos" placeholder="Apellido">
-                            <br>
+                        <div class="form-group">
+                            <input id="nombreUsuario" name="nombreUsuario" type="text" class="form-control textos" placeholder="Nombre">
+                            <div id="msjNombre" class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <input id="apellidoUsuario" name="apellidoUsuario" type="text" class="form-control textos" placeholder="Apellido">
+                            <div id="msjApellido" class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
                             <label for="">Fecha de nacimiento</label>
                             <div id="fechaNacimiento" class="text-center">
                                 <select class=" textos" name="" id="dia_N"></select>
                                 <select class=" textos" name="" id="mes_N"></select>
                                 <select class=" textos" name="" id="anio_N"></select>
                             </div>
-                            <br>
+                        </div>
+                        <div class="form-group">
                             <label>Género</label>
                             <div class="text-center">
                                 <label for="">
@@ -62,31 +68,37 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 login">
                     <div class="logo"></div>
                     <h6>Información de acceso</h6><hr>
+                    <!-- Formulario -->
                     <form>
                         <div class="form-group">
-                            <input id="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico">
-                            <br>
-                            <input id="contraseña" type="text" class="form-control textos" placeholder="Introduzca la contraseña">
-                            <br>
-                            <input id="contraseñaVerificada" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
-                            <hr>
-                            <div class="text-center">
-                                <label class="text-muted">
-                                    <input type="checkbox" name="terminosCondiciones">Acepto términos y condiciones 
-                                </label>
-                            </div>
-                            <hr>
+                            <input id="correo" name="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico">
+                            <div id="msjCorreo" class="invalid-feedback"></div>
                         </div>
+                        <div class="form-group">
+                            <input id="contrasenia" name="contraseña" type="text" class="form-control textos" placeholder="Introduzca la contraseña">
+                            <div id="msjContrasenia" class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <input id="contraseniaVerificada" name="contraseniaVerificada" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
+                            <div id="msjContraseniaVer" class="invalid-feedback"></div>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <label class="text-muted">
+                                <input type="checkbox" name="terminosCondiciones">Acepto términos y condiciones 
+                            </label>
+                        </div>
+                        <hr>
                     </form>
-
+                    <!-- /Formulario -->
                     <div class="anuncio text-center">
                         <span>Verifica que tus datos esten escritos correctamente para un mejor servicio.</span>
                     </div>
                     <div class="text-center">
-                        <button type="button" class="btn botones btn-registro">Crear cuenta</button>
+                        <button type="button" onclick="crearCuentaUsuario()" class="btn botones btn-registro">Crear cuenta</button>
                     </div>
                 </div>
-            </div>
+            </div><!-- fin de row-->
         </div>
     </div>
 
