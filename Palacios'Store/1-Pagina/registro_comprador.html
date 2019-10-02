@@ -32,28 +32,31 @@
                     <form>
                         <div class="form-group">
                             <input id="nombreUsuario" name="nombreUsuario" type="text" class="form-control textos" placeholder="Nombre">
-                            <div id="msjNombre" class="invalid-feedback"></div>
+                            <div id="msjNombre" class="invalid-feedback" style="color:white !important"></div>
                         </div>
                         <div class="form-group">
                             <input id="apellidoUsuario" name="apellidoUsuario" type="text" class="form-control textos" placeholder="Apellido">
-                            <div id="msjApellido" class="invalid-feedback"></div>
+                            <div id="msjApellido" class="invalid-feedback" style="color:white !important"></div>
                         </div>
                         <div class="form-group">
                             <label for="">Fecha de nacimiento</label>
                             <div id="fechaNacimiento" class="text-center">
-                                <select class=" textos" name="" id="dia_N"></select>
-                                <select class=" textos" name="" id="mes_N"></select>
-                                <select class=" textos" name="" id="anio_N"></select>
+                                <select class=" textos" name="" id="dia_N"><option value="" selected></option></select>
+                                <select class=" textos" name="" id="mes_N"><option value="" selected></option></select>
+                                <select class=" textos" name="" id="anio_N"><option value="" selected></option></select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Género</label>
                             <div class="text-center">
-                                <label for="">
-                                    <input type="radio" name="sexo"> Hombre
+                                <label>
+                                    <input type="radio" name="sexo" value="Masculino"> Masculino
                                 </label>
-                                <label for="">
-                                    <input type="radio" name="sexo"> Mujer
+                                <label>
+                                    <input type="radio" name="sexo" value="Femenino"> Femenino
+                                </label>
+                                <label>
+                                    <input type="radio" name="sexo" value="Personal"> Personal
                                 </label>
                             </div>
                         </div>
@@ -85,7 +88,7 @@
                         <hr>
                         <div class="text-center">
                             <label class="text-muted">
-                                <input type="checkbox" name="terminosCondiciones">Acepto términos y condiciones 
+                                <input type="checkbox" name="terminosCondiciones" checked disabled>Acepto términos y condiciones 
                             </label>
                         </div>
                         <hr>
