@@ -31,24 +31,27 @@
                     <!-- Formulario -->
                     <form>
                         <div class="form-group">
-                            <input id="nombreEmpresa" type="text" class="form-control textos" placeholder="Nombre de empresa"><br>
-                            <input id="sitioEmpresa" type="text" class="form-control textos" placeholder="Sitio Web"><br>
-                            <textarea id="descripcionEmpresa" class="form-control textos" name="" cols="4" rows="2" placeholder="Descripción de la empresas"></textarea>
+                            <input id="nombreEmpresa" name="nombreEmpresa" type="text" class="form-control textos" placeholder="Nombre de empresa">
+                            <div id="msjNombre" class="invalid-feedback" style="color:white"></div>
+                        </div>
+                        <div class="form-group">
+                            <input id="sitioEmpresa" name="sitioEmpresa" type="text" class="form-control textos" placeholder="Sitio Web">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="descripcionEmpresa" name="descripcionEmpresa" class="form-control textos" name="" cols="4" rows="2" placeholder="Descripción de la empresas"></textarea>
                         </div>
                         <h6>Información Detallada</h6><hr>
                         <div class="form-group">
-                            <!--<input id="producto-empresa" type="text" class="form-control textos" placeholder="Producto que proporciona"><br>
-                            <input id="formaVenta" type="text" class="form-control textos" placeholder="Forma de venta"><br>-->
-                            <select class="form-control textos" name="">
+                            <select class="form-control textos" id="plan" name="plan">
                               <option value="">Plan que contrata</option>
                               <option value="basico">Básico 100$</option>
                               <option value="estandar">Estandar 250$</option>
                               <option value="premium">Premium 600$</option>
                             </select>
+                            <div id="msjPlan" class="invalid-feedback"></div>
                         </div>
                     </form>
                     <!-- /Formulario -->
-                    
                     <div class="anuncio text-center">
                         <span>Nos alegra saber que seremos de tu preferencia y confianza conforme tus productos.</span>
                     </div>
@@ -56,23 +59,24 @@
                 <!-- /Primera Columna -->
                 <!-- Segunda Columna -->
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 login">
-                    <div class="logo row">
-                        <!--<div class="col-12">
-                            <button type="button" class="close" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>-->
-                    </div>
+                    <div class="logo row"></div>
                     <h6>Información de Acceso</h6><hr>
                     <!-- Formulario -->
                     <form>
                         <div class="form-group">
-                            <input id="correoVendedor" type="email" class="form-control textos" placeholder="Dirección de correo electrónico"><br>
-                            <input id="contraseñaVendedor" type="text" class="form-control textos" placeholder="Introduzca una contraseña"><br>
-                            <input id="contraseñaVendedor_Verif" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña"><hr>
+                            <input id="correo" name="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico">
+                            <div id="msjCorreo" class="invalid-feedback"></div>
                         </div>
-                        <div class="text-center">
-                            <label><input type="checkbox" name="" id="">Acepto términos y condiciones</label><hr>
+                        <div class="form-group">
+                            <input id="contrasenia" name="contrasenia" type="text" class="form-control textos" placeholder="Introduzca una contraseña">
+                            <div id="msjPassword" class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <input id="contraseniaVerif" name="contraseniaVerif" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
+                            <div id="msjPassVerif" class="invalid-feedback"></div>
+                        </div><hr>
+                        <div class="text-center text-muted">
+                            <label><input type="checkbox" name="" id="" checked disabled>Acepto términos y condiciones</label><hr>
                         </div>
                     </form>
                     <!-- /Formulario -->
@@ -80,7 +84,7 @@
                         <span>Verifica que tus datos esten escritos correctamente para un mejor servicio..</span>
                     </div>
                     <div class="text-center">
-                        <button type="button" class="btn botones btn-registro">Crear cuenta</button>
+                        <button type="button" onclick="crearCuentaVendedor()" class="btn botones btn-registro">Crear cuenta</button>
                     </div>
                 </div>
                 <!-- /Segunda Columna -->
@@ -92,5 +96,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="js/registro_vendedor.js"></script>
 </body>
 </html>
