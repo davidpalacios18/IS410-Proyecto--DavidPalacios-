@@ -11,34 +11,7 @@
     background: #00d8ff;
     background: linear-gradient(to right, #009db9, #11dbff);
     padding: 2.8px !important;
-}/*
-.degradadoNavbar{
-  background: linear-gradient(270deg, #11cce5, #053940, #13e3ff, #09717f, #0eaabf);
-  background-size: 1000% 1000%;
-
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
-
-  padding: 3px !important;
 }
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-*/
 /*Slide*/
 #slide-opciones{
   background: #09717F;
@@ -105,7 +78,7 @@
 
 
 /*Perfil*/
-#imagen-perfil{
+#imagenPerfil{
   width: 150px;
   height: 150px;
   background-size: cover;
@@ -114,7 +87,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-#nombre-perfil{
+#nombrePerfil{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -126,6 +99,10 @@
 #opcionPerfil , #InformacionPerfil{
   margin-left: auto;
   margin-right: auto;
+}
+#map{
+  width: 500px;
+  height: 500px;
 }
 fieldset{
   text-align: center;

@@ -24,57 +24,57 @@ function mostrarCategoria(categoria){
     switch (categoria) {
     	case 'perfil':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#perfil-ususario').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#perfil-ususario').show(1000);
     		break;
     	case 'hogar':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#categoria-hogar').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#categoria-hogar').show(1000);
         break;
     	case 'salud':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#categoria-salud').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#categoria-salud').show(1000);
         break;
     	case 'deporte':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#categoria-deporte').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#categoria-deporte').show(1000);
     		break;
       case 'tecnologia':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#categoria-tecnologia').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#categoria-tecnologia').show(1000);
       	break;
       case 'accesorio':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#categoria-accesorios').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#categoria-accesorios').show(1000);
       	break;
       case 'moda':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#categoria-moda').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#categoria-moda').show(1000);
         break;
       case 'belleza':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#categoria-belleza').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#categoria-belleza').show(1000);
         break;
       case 'mantenimiento':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#categoria-mantenimiento').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#categoria-mantenimiento').show(1000);
         break;
       case 'contenido-Principal':
         esconderCategorias()
-        $('#contenido-Principal').show(2000);
+        $('#contenido-Principal').show(1000);
         break;
       case 'estadistica':
         esconderCategorias();
-        $('#contenido-Principal').hide(2000);
-        $('#estadisticas').show(2000);
+        $('#contenido-Principal').hide(1000);
+        $('#estadisticas').show(1000);
         break;
     	default:
     		alert('Nobody sucks!');

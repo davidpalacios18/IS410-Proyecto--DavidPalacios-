@@ -26,18 +26,6 @@ function crearCuentaVendedor(){
     let correo = validarEmail($('#correo').val());
     let password = validarContrasenia($('#contrasenia').val());
 
-    console.log($('#plan').val());
-
-    if($('#plan').val() == ''){
-        document.getElementById('nombreEmpresa').classList.remove('is-valid');
-        document.getElementById('nombreEmpresa').classList.add('is-invalid');
-        $('#msjPlan').html('Ingrese el nombre correctamente');
-        return false;
-    }else{
-        document.getElementById('nombreEmpresa').classList.remove('is-invalid');
-        document.getElementById('nombreEmpresa').classList.add('is-valid');
-    }
-
     if(nombre != true){
         document.getElementById('nombreEmpresa').classList.remove('is-valid');
         document.getElementById('nombreEmpresa').classList.add('is-invalid');
@@ -46,6 +34,15 @@ function crearCuentaVendedor(){
     }else{
         document.getElementById('nombreEmpresa').classList.remove('is-invalid');
         document.getElementById('nombreEmpresa').classList.add('is-valid');
+    }
+    if($('#plan').val() == ''){
+        document.getElementById('plan').classList.remove('is-valid');
+        document.getElementById('plan').classList.add('is-invalid');
+        $('#msjPlan').html('Seleccione un plan');
+        return false;
+    }else{
+        document.getElementById('plan').classList.remove('is-invalid');
+        document.getElementById('plan').classList.add('is-valid');
     }
     if(correo != true){
         document.getElementById('correo').classList.remove('is-valid');
@@ -73,16 +70,24 @@ function crearCuentaVendedor(){
         }else{
           document.getElementById('contraseniaVerif').classList.remove('is-valid');
           document.getElementById('contraseniaVerif').classList.add('is-invalid');
-          $('#msjContraseniaVer').html('Contraseña no coinciden');
+          $('#msjPassVerif').html('Contraseña no coinciden');
           return false;
         }
     }else{
         document.getElementById('contraseniaVerif').classList.remove('is-valid');
         document.getElementById('contraseniaVerif').classList.add('is-invalid');
-        $('#msjContraseniaVer').html('Contraseña no coinciden');
+        $('#msjPassVerif').html('Contraseña no coinciden');
         return false;
     }
 
+    let vendedor = {
+        nombreEmpresa: $('#nombreEmpresa').val(),
+        sitioEmpresa: $('#sitioEmpresa').val(),
+        descripcionEmpresa: $('#descripcionEmpresa').val(),
+        plan: $('#plan').val(),
+        correo: $('#correo').val(),
+        contrasenia: $('#contrasenia').val()
+    }
 
-    console.log("vamos bien");
+    console.log(vendedor);
 }

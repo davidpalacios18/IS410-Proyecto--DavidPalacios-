@@ -179,7 +179,7 @@
             <hr>
             <div class="row">
               <div class="col-12 text-center">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/NPiCtM8cq9o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/NPiCtM8cq9o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
               </div>
               <div class="col-12 text-center">
                 <div class="">
@@ -208,11 +208,11 @@
             <!--Barra lateral-->
             <div id="opcionPerfil" class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 col-8">
               <div id="encabezado-perfil" class="row">
-                <div id="imagen-perfil" class="" style="background-image: url('img/coca-cola.png')">
+                <div id="imagenPerfil" class="" style="background-image: url('img/coca-cola.png')">
                   <!-- style="background-image: url('img/perfil.jpg')"  -->
                   <!--<img class="img-fluid rounded-circle" src="img/perfil.jpg" alt="">-->
                 </div><!--Fin de la imagen del empresa-->
-                <div id="nombre-perfil" class="text-center">
+                <div id="nombrePerfil" class="text-center">
                   Distribuidora Coca Cola
                 </div>
               </div>
@@ -237,7 +237,7 @@
               <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                   <!--perfil publico-->
-                  <div id="perfil-publico" class="">
+                  <div id="perfilPublico" class="">
                     <fieldset>
                       <legend>Perfil Empresarial</legend>
                       <small>Añade información sobre ti</small>
@@ -246,28 +246,31 @@
                     <div class="centradoFOrmulario">
                       <label for="">Informacion básica</label>
                       <br>
-                      <input id="nombre-empresa" type="text"  class="form-control textos" placeholder="Nombre Empresa">
-                      <input id="sitio-empresa" type="text"  class="form-control textos" placeholder="Sitio web">
+                      <input id="nombreEmpresa" type="text"  class="form-control textos" placeholder="Nombre Empresa">
+                      <input id="sitioEmpresa" type="text"  class="form-control textos" placeholder="Sitio web">
 
-                      <input id="titulo-empresa" type="text" class="form-control textos" placeholder="Pagina de Facebook" aria-describedby="titulo-empresa_descripcion">
+                      <input id="tituloEmpresa" type="text" class="form-control textos" placeholder="Pagina de Facebook" aria-describedby="titulo-empresa_descripcion">
                       <small id="titulo-empresa_descripcion" class="form-text text-muted">Añade tu pagina de Facebook"</small>
                       <br>
                       <div class="form-group">
-                        <label for="descripcion-empresa">Descripción</label>
-                        <textarea id="descripcion-empresa" name="descripcion-empresa" class="form-control textos" rows="5" cols="70" aria-describedby="descripcion-Help"></textarea>
+                        <label for="descripcionEmpresa">Descripción</label>
+                        <textarea id="descripcionEmpresa" name="descripcion-empresa" class="form-control textos" rows="5" cols="70" aria-describedby="descripcion-Help"></textarea>
                         <small id="descripcion-Help" class="form-text text-muted">Cuenta a tus clientes a que se dedica tu empresa</small>
+                      </div>
+                      <div class="form-group">
+                        <div id="map"></div>
                       </div>
                     </div>
                     <hr>
                     <div class="centradoFOrmulario text-center">
-                      <button class="btn btn-color" type="button" name="button">Guardar</button>
+                      <button class="btn btn-color" type="button" name="button">Editar</button>
                     </div>
                   </div><!--Fin de perfil publico-->
                 </div>
 
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                   <!--Fotografía-->
-                  <div id="fotografia-publica" class="">
+                  <div id="fotografiaPublica" class="">
                     <fieldset>
                       <legend>Fotografía</legend>
                       <small>Añade una foto de tu empresa al perfil</small>
@@ -307,9 +310,9 @@
                     </fieldset>
                     <hr>
                     <div class="centradoFOrmulario">
-                      <label for="cuenta-correo">Correo electrónico:</label>
+                      <label for="correo">Correo electrónico:</label>
                       <div class="input-group">
-                        <input id="cuenta-correo" type="text" class="form-control textos" aria-label="Dollar amount (with dot and two decimal places)">
+                        <input id="correo" type="text" class="form-control textos" aria-label="Dollar amount (with dot and two decimal places)">
                         <div class="input-group-append">
                           <span type="button" class="btn input-group-text"  style="margin-bottom: 15px;"><i class="fas fa-pencil-alt"></i></span>
                         </div>
@@ -318,7 +321,13 @@
                     <hr>
                     <div class="centradoFOrmulario">
                       <label for="">Plan Contratado</label><br>
-                      <input id="planContratado" class="form-control textos" type="text" placeholder="Basico" readonly>
+                      <select class="form-control textos" id="plan" name="plan">
+                        <option value="">Plan que contrata</option>
+                        <option value="basico">Básico 100$</option>
+                        <option value="estandar">Estandar 250$</option>
+                        <option value="premium">Premium 600$</option>
+                      </select>
+                      <!--<input id="planContratado" class="form-control textos" type="text" placeholder="Basico" readonly>-->
                       <br>
                       <div class="centradoFOrmulario text-center">
                         <button class="btn btn-color" type="button textos" name="button">Cambiar Plan</button>
@@ -327,9 +336,9 @@
                     <hr>
                     <div class="centradoFOrmulario">
                       <label for="">Contraseña</label>
-                      <input id="contraseña-Actual" type="text" class="form-control textos" placeholder="Escribe la contraseña actual">
-                      <input id="contraseña-Actual" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña">
-                      <input id="contraseña-nueva" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña otra vez">
+                      <input id="contraseniaActual" type="text" class="form-control textos" placeholder="Escribe la contraseña actual">
+                      <input id="contraseniaNueva" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña">
+                      <input id="contraseniaVerif" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña otra vez">
                     </div>
                     <hr>
                     <div class="centradoFOrmulario text-center">
@@ -432,6 +441,12 @@
   <script src="js/swiper.min.js" charset="utf-8"></script>
   <script src="js/jquery-3.4.1.min.js" charset="utf-8"></script>
   <script src="js/controlador.js" charset="utf-8"></script>
+  
+  <!-- Scripts API de Mapa -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3Sp1JnD1M8t2N8G6AlDvDEHkOtWnIysE&callback=initMap"
+  type="text/javascript"></script>
+  <script src="js/localizacion.js"></script>
+  <script src="js/controlador-empresa.js"></script>
 </body>
 
 </html>
