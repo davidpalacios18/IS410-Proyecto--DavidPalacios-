@@ -39,7 +39,7 @@
     text-align: left;
   }
 /*Productos*/
-#precio-oferta{
+#precioOferta{
   color: #0EAABF!important;
   font-size: 1.5rem;
   font-weight: bold;
@@ -101,8 +101,8 @@
   margin-right: auto;
 }
 #map{
-  width: 500px;
-  height: 500px;
+  width: 98%;
+  height: 70vh;
 }
 fieldset{
   text-align: center;
@@ -144,4 +144,11 @@ fieldset{
       width: 80% !important;
       padding-top: 50px !important;
       padding-bottom: 50px !important;
+}
+
+
+.thumb {
+  height: 75px;
+  border: 1px solid #000;
+  margin: 10px 5px 0 0;
 }

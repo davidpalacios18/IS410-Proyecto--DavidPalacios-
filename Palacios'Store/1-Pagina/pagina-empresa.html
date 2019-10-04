@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--Titulo Principal-->
   <title>Palacio´s</title>
-  <link rel="icon" href="../iconos/icono-Blanco.png" type="image/x-icon">
+  <link rel="icon" href="../2-landigpage/iconos/icono-Blanco.png" type="image/x-icon">
 
   <!--Fuentes personalizadas para esta plantilla-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -21,6 +21,10 @@
   <link rel="stylesheet" href="css/principal.css">
   <link rel="stylesheet" href="css/swiper.min.css"
   <link rel="stylesheet" href="../css/animations.css">
+
+  <!-- Mapas leaflet -->
+  <link rel="stylesheet" href="leaflet/leaflet.css">
+  <script src="leaflet/leaflet.js"></script>
 </head>
 
 <body id="page-top">
@@ -55,24 +59,6 @@
           <i class="fas fa-bookmark"></i>
           <span>Productos</span></a>
       </li>
-      <!--<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-store"></i>
-          <span>Categorias</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Categorias</h6>
-          <a class="dropdown-item" onclick="mostrarCategoria('hogar')" href="#">Hogar</a>
-          <a class="dropdown-item" onclick="mostrarCategoria('salud')" href="#">Salud</a>
-          <a class="dropdown-item" onclick="mostrarCategoria('deporte')" href="#">Deporte</a>
-          <a class="dropdown-item" onclick="mostrarCategoria('tecnologia')" href="#">Tecnología</a>
-          <a class="dropdown-item" onclick="mostrarCategoria('accesorio')" href="#">Accesorios</a>
-          <a class="dropdown-item" onclick="mostrarCategoria('moda')" href="#">Moda</a>
-          <a class="dropdown-item" onclick="mostrarCategoria('belleza')" href="#">Belleza</a>
-          <a class="dropdown-item" onclick="mostrarCategoria('mantenimiento')" href="#">Mantenimiento</a>
-          <div class="dropdown-divider"></div>
-        </div>
-      </li>-->
       <li class="nav-item">
         <a class="nav-link" onclick="mostrarCategoria('estadistica')" class="nav-link" href="#">
           <i class="fas fa-chart-line"></i>
@@ -93,103 +79,62 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-      <!---->
-      <div class="card mb-3">
-        <div class="card-header text-center">
-          <h5>¡Es un gusto tenerte de nuevo en <b>Palacio´s</b>!</h5>
-        </div>
-      </div>
-
       <!--Principal-->
       <div id="contenido-Principal" class="card mb-3">
         <div class="card-header">
           <h5><i class="fas fa-bookmark"></i> Productos</h5>
         </div>
         <div class="card-body">
-          <div class="row">
-            <div id="bannerPrincipal" class="col-12" style="background-image: url(img/bannerPrincipal.jpg)">
-              <p id="parrafoBanner">Esto es lo que has ofrecido a tus<br> clientes...</p>
-            </div>
+          <!-- Botones -->
+          <div class="btn-group"> 
+            <button onclick="mostrarAgregarProducto()" class="btn btn-color">Agregar Producto</button>
+          </div><hr>
+          <!-- /Botones -->
+          <!-- Agregar Productos -->
+          <div>
+            <form id="agregarProducto" class="centradoFOrmulario" enctype="multipart/form-data">
+              <div class="form-group">
+                <!--<label for="imagen">Imagen</label>-->
+                <input id="imagen" name="imagen" class="form-control textos" type="file" accept="image/*">
+                <span id="recorte"></span>
+              </div>
+              <div class="form-group">
+                <input class="form-control textos" type="text" name="nombre" id="nombre" name="nombre" placeholder="Nombre de Producto">
+              </div>
+              <div class="form-group">
+                <input class="form-control textos" type="text" name="descripcion" id="descripcion" name="descripcion" placeholder="Descripción">
+              </div>
+              <div class="form-group">
+                <input class="form-control textos" type="text" name="disponible" id="disponible" placeholder="Cantidad Dispodible">
+              </div>
+              <div class="form-group">
+                <input class="form-control textos" type="text" name="normal" id="normal" placeholder="Precio Normal">
+              </div>
+              <div class="form-group">
+                <input class="form-control textos" type="text" name="promocion" id="promocion" placeholder="Precio Promoción">
+              </div>
+              <div class="form-group">
+                <select name="categoria" id="categoria" class="form-control textos">
+                  <option value="" selected>Categoria</option>
+                  <option value="hogar">Hogar</option>
+                  <option value="salud">Salud</option>
+                  <option value="deporte">Deporte</option>
+                  <option value="tecnologia">Tecnología</option>
+                  <option value="accesorios">Accesorios</option>
+                  <option value="moda">Moda</option>
+                  <option value="belleza">Belleza</option>
+                  <option value="mantenimiento">Mantenimiento</option>
+                </select>
+              </div>
+              <div class="centradoFOrmulario text-center">
+                <button class="btn btn-color" onclick="agregarProducto()" type="button" name="">Agregar</button>
+              </div>
+            </form>
+            <hr>
           </div>
-          <hr>
-          <div class="">
-            <h5>Agregado Recientemente</h5>
-            <div class="row">
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
-                <div class="card text-center ">
-                  <div id="imagenProducto" class="card-img-top">
-                    <img src="img/productos/cocacola1.webp" class="img-fluid" alt="...">
-                  </div>
-                  <div class="card-body tarjeta">
-                    <div class="">
-                      <h5 id="titulo-Producto" class="card-title">Camiseta Coca Cola</h5>
-                    </div>
-                    <div id="descripcion-Producto" class="">
-                      <small><p class="card-text truncar-texto">Camiseta para dama</p></small>
-                      <div class="card-text row">
-                        <div class="col-6">
-                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">10</span> Disponibles</small>
-                        </div>
-                        <div class="col-6">
-                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 360.00</span> </small>
-                        </div>
-                      </div><hr>
-                      <div class="">
-                        <p class="card-text"><span id="precio-oferta">L 290.00</span></p>
-                      </div><hr>
-                    </div>
-                    <div class="">
-                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
-                    </div>
-                  </div>
-                </div>
-              </div><!--Fin-->
-
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 caja_margen">
-                <div class="card text-center ">
-                  <div id="imagenProducto" class="card-img-top">
-                    <img src="img/productos/cocacola2.jpg" class="img-fluid" alt="...">
-                  </div>
-                  <div class="card-body tarjeta">
-                    <div class="">
-                      <h5 id="titulo-Producto" class="card-title">Carro Coca Cola</h5>
-                    </div>
-                    <div id="descripcion-Producto" class="">
-                      <small><p class="card-text truncar-texto">Carrito de juguete, aspecto antiguo marca Coca-Cola</p></small>
-                      <div class="card-text row">
-                        <div class="col-6">
-                          <small class="text-muted"><i class="fas fa-tags"></i> <span id="cantidad-Disponible">11</span> Disponibles</small>
-                        </div>
-                        <div class="col-6">
-                          <small class="text-muted">Antes<br><span id="precioAntes" style="text-decoration: line-through;"> L 75.00</span> </small>
-                        </div>
-                      </div><hr>
-                      <div class="">
-                        <p class="card-text"><span id="precio-oferta">L 39.00</span></p>
-                      </div><hr>
-                    </div>
-                    <div class="">
-                      <button href="#" class="btn btn-link btn-producto">Añadir al carrito</button> | <button href="#" class="btn btn-link btn-producto">Detalles</button>  <!-- btn btn-anadirCarrito -->
-                    </div>
-                  </div>
-                </div>
-              </div><!--Fin-->
-
-            </div><!--Final de la fila-->
-            <hr>
-            <div class="row">
-              <div class="col-12 text-center">
-                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/NPiCtM8cq9o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-              </div>
-              <div class="col-12 text-center">
-                <div class="">
-                  <h6>Subir anuncio</h6>
-                  <input type="text" class="form-control textos" placeholder="Sube o enlaza tu anuncio" readonly><br>
-                  <button class="btn btn-color" type="button" name="button">Guardar</button>
-                </div>
-              </div>
-            </div>
-            <hr>
+          <!-- /Agregar Productos -->
+          <!-- Contenedor de los productos -->
+          <div id="contenedorProductos" class="row">
           </div>
         </div><!--Fin del card body-->
         <div class="card-footer">
@@ -203,180 +148,179 @@
         <div class="card-header">
           <h2>Perfil</h2>
         </div>
-        <div class="card-body">
-          <div class="row">
-            <!--Barra lateral-->
-            <div id="opcionPerfil" class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 col-8">
-              <div id="encabezado-perfil" class="row">
-                <div id="imagenPerfil" class="" style="background-image: url('img/coca-cola.png')">
-                  <!-- style="background-image: url('img/perfil.jpg')"  -->
-                  <!--<img class="img-fluid rounded-circle" src="img/perfil.jpg" alt="">-->
-                </div><!--Fin de la imagen del empresa-->
-                <div id="nombrePerfil" class="text-center">
-                  Distribuidora Coca Cola
-                </div>
-              </div>
-              <hr>
-              <div  class="row">
-                <div class="col-12">
-                  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="btn btn-block btn-colorPerfil nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Perfil</a>
-                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Fotografía</a>
-                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cuenta</a>
-                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Sucursales</a>
-                    <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" href="index.html">Cerrar Sesión</a>
+        <form enctype="multipart/form-data" >
+          <div class="card-body">
+            <div class="row">
+              <!--Barra lateral-->
+              <div id="opcionPerfil" class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 col-8">
+                <div id="encabezado-perfil" class="row">
+                  <div id="imagenPerfil" class="" style="background-image: url('img/coca-cola.png')">
+                  </div><!--Fin de la imagen del empresa-->
+                  <div id="nombrePerfil" class="text-center">
+                    Nombre Empresa
                   </div>
                 </div>
+                <hr>
+                <div  class="row">
+                  <div class="col-12">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <a class="btn btn-block btn-colorPerfil nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Perfil</a>
+                      <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Fotografía</a>
+                      <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cuenta</a>
+                      <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Sucursales</a>
+                      <a class="btn btn-block btn-colorPerfil nav-link" id="v-pills-settings-tab" href="index.html">Cerrar Sesión</a>
+                    </div>
+                  </div>
+                </div>
+                <hr>
               </div>
-              <hr>
-            </div>
-
-            <!--Lado derecho de los datos-->
-            <div id="InformacionPerfil" class="col-xl-9 col-lg-9 col-md-8 col-sm-6 col-12">
-
-              <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                  <!--perfil publico-->
-                  <div id="perfilPublico" class="">
-                    <fieldset>
-                      <legend>Perfil Empresarial</legend>
-                      <small>Añade información sobre ti</small>
-                    </fieldset>
-                    <hr>
-                    <div class="centradoFOrmulario">
-                      <label for="">Informacion básica</label>
-                      <br>
-                      <input id="nombreEmpresa" type="text"  class="form-control textos" placeholder="Nombre Empresa">
-                      <input id="sitioEmpresa" type="text"  class="form-control textos" placeholder="Sitio web">
-
-                      <input id="tituloEmpresa" type="text" class="form-control textos" placeholder="Pagina de Facebook" aria-describedby="titulo-empresa_descripcion">
-                      <small id="titulo-empresa_descripcion" class="form-text text-muted">Añade tu pagina de Facebook"</small>
-                      <br>
-                      <div class="form-group">
-                        <label for="descripcionEmpresa">Descripción</label>
-                        <textarea id="descripcionEmpresa" name="descripcion-empresa" class="form-control textos" rows="5" cols="70" aria-describedby="descripcion-Help"></textarea>
-                        <small id="descripcion-Help" class="form-text text-muted">Cuenta a tus clientes a que se dedica tu empresa</small>
-                      </div>
-                      <div class="form-group">
-                        <div id="map"></div>
-                      </div>
-                    </div>
-                    <hr>
-                    <div class="centradoFOrmulario text-center">
-                      <button class="btn btn-color" type="button" name="button">Editar</button>
-                    </div>
-                  </div><!--Fin de perfil publico-->
-                </div>
-
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                  <!--Fotografía-->
-                  <div id="fotografiaPublica" class="">
-                    <fieldset>
-                      <legend>Fotografía</legend>
-                      <small>Añade una foto de tu empresa al perfil</small>
-                    </fieldset>
-                    <hr>
-                    <div class="centradoFOrmulario">
-                      <h6>Vista previa de la imagen</h6>
-                      <div class="img-recuadroPrincipal">
-                        <div class="img-recuadroSecundario">
-                          <img class="img-fluid" src="img/anonymous_3.png" alt="">
+  
+              <!--Lado derecho de los datos-->
+              <div id="InformacionPerfil" class="col-xl-9 col-lg-9 col-md-8 col-sm-6 col-12">
+  
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <!--perfil publico-->
+                    <div id="perfilPublico" class="">
+                      <fieldset>
+                        <legend>Perfil Empresarial</legend>
+                        <small>Añade información sobre ti</small>
+                      </fieldset>
+                      <hr>
+                      <div class="centradoFOrmulario">
+                        <label for="">Informacion básica</label>
+                        <br>
+                        <input id="nombreEmpresa" type="text"  class="form-control textos" placeholder="Nombre Empresa">
+                        <input id="sitiWeb" type="text"  class="form-control textos" placeholder="Sitio web">
+  
+                        <input id="pageFacebook" type="text" class="form-control textos" placeholder="Pagina de Facebook" aria-describedby="titulo-empresa_descripcion">
+                        <small id="titulo-empresa_descripcion" class="form-text text-muted">Añade tu pagina de Facebook"</small>
+                        <br>
+                        <div class="form-group">
+                          <label for="descripcionEmpresa">Descripción</label>
+                          <textarea id="descripcionEmpresa" name="descripcion-empresa" class="form-control textos" rows="5" cols="70" aria-describedby="descripcion-Help"></textarea>
+                          <small id="descripcion-Help" class="form-text text-muted">Cuenta a tus clientes a que se dedica tu empresa</small>
                         </div>
                       </div>
-                    </div>
-                    <hr>
-                    <div class="centradoFOrmulario">
-                      <label for="cambiarFoto-empresa">Añadir o cambiar imagen:</label>
-                      <div class="input-group mb-3">
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input textos" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                          <label class="custom-file-label" for="inputGroupFile01">No has seleccionado un archivo</label>
-                        </div>
-                      </div>
-                    </div>
-                    <hr>
-                    <div class="centradoFOrmulario text-center">
-                      <button class="btn btn-color" type="button" name="button">Guardar</button>
-                    </div>
-                  </div><!--Fin de fotografia publica-->
-                </div>
-
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                  <!--Cuenta-->
-                  <div id="cuenta-publica" class="">
-                    <fieldset>
-                      <legend>Cuenta</legend>
-                      <small>Edita la configuración de tu cuenta y cambia la contraseña o plan, aquí</small>
-                    </fieldset>
-                    <hr>
-                    <div class="centradoFOrmulario">
-                      <label for="correo">Correo electrónico:</label>
-                      <div class="input-group">
-                        <input id="correo" type="text" class="form-control textos" aria-label="Dollar amount (with dot and two decimal places)">
-                        <div class="input-group-append">
-                          <span type="button" class="btn input-group-text"  style="margin-bottom: 15px;"><i class="fas fa-pencil-alt"></i></span>
-                        </div>
-                      </div>
-                    </div>
-                    <hr>
-                    <div class="centradoFOrmulario">
-                      <label for="">Plan Contratado</label><br>
-                      <select class="form-control textos" id="plan" name="plan">
-                        <option value="">Plan que contrata</option>
-                        <option value="basico">Básico 100$</option>
-                        <option value="estandar">Estandar 250$</option>
-                        <option value="premium">Premium 600$</option>
-                      </select>
-                      <!--<input id="planContratado" class="form-control textos" type="text" placeholder="Basico" readonly>-->
-                      <br>
+                      <hr>
                       <div class="centradoFOrmulario text-center">
-                        <button class="btn btn-color" type="button textos" name="button">Cambiar Plan</button>
+                        <button class="btn btn-color" type="button" name="button">Guardar</button>
                       </div>
-                    </div>
-                    <hr>
-                    <div class="centradoFOrmulario">
-                      <label for="">Contraseña</label>
-                      <input id="contraseniaActual" type="text" class="form-control textos" placeholder="Escribe la contraseña actual">
-                      <input id="contraseniaNueva" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña">
-                      <input id="contraseniaVerif" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña otra vez">
-                    </div>
-                    <hr>
-                    <div class="centradoFOrmulario text-center">
-                      <button class="btn btn-color" type="button" name="button">Guardar Cambios</button>
-                    </div>
-                  </div><!--Fin de la cuenta-->
-                </div>
-
-                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                  <!--Favoritos-->
-                  <div id="sucursales" class="">
-                    <div id="promociones-favoritas" class="">
+                    </div><!--Fin de perfil publico-->
+                  </div>
+  
+                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <!--Fotografía-->
+                    <div id="fotografiaPublica" class="">
                       <fieldset>
-                        <legend>Sucursales en la región</legend>
-                        <small>Sucursales en la ciudad principal donde desarrollas las ventas</small>
+                        <legend>Fotografía</legend>
+                        <small>Añade una foto de tu empresa al perfil</small>
                       </fieldset>
                       <hr>
                       <div class="centradoFOrmulario">
-
+                        <h6>Vista previa de la imagen</h6>
+                        <div class="img-recuadroPrincipal">
+                          <div class="img-recuadroSecundario">
+                            <img id="vistaPrevia" class="img-fluid" src="img/anonymous_3.png" alt="">
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div id="empresas-favoritas" class="">
+                      <hr>
+                      <div class="centradoFOrmulario">
+                        <label for="cambiarFoto-empresa">Añadir o cambiar imagen:</label>
+                        <div class="input-group mb-3">
+                          <div class="">
+                            <input id="files" name="files" type="file" class=" textos">
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="centradoFOrmulario text-center">
+                        <button onclick="verImagen()" class="btn btn-color" type="button" name="button">Guardar</button>
+                      </div>
+                    </div><!--Fin de fotografia publica-->
+                  </div>
+  
+                  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <!--Cuenta-->
+                    <div id="cuenta-publica" class="">
                       <fieldset>
-                        <legend>Sucursales en el exterior</legend>
-                        <small>Sucursales fuera de la ciudad o país en donde desarrollas las ventas</small>
+                        <legend>Cuenta</legend>
+                        <small>Edita la configuración de tu cuenta y cambia la contraseña o plan, aquí</small>
                       </fieldset>
                       <hr>
                       <div class="centradoFOrmulario">
-
+                        <label for="correo">Correo electrónico:</label>
+                        <div class="input-group">
+                          <input id="correo" type="text" class="form-control textos" aria-label="Dollar amount (with dot and two decimal places)">
+                          <div class="input-group-append">
+                            <span type="button" class="btn input-group-text"  style="margin-bottom: 15px;"><i class="fas fa-pencil-alt"></i></span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div><!-- Fin de Favoritos-->
-                </div>
-              </div><!--Fin del fill tabContent-->
-
-            </div><!--fin del  lado derecho de las barras-->
-          </div><!--Fin de la fila de la card-body -->
-        </div><!--Fin del card-body-->
+                      <hr>
+                      <div class="centradoFOrmulario">
+                        <label for="">Plan Contratado</label><br>
+                        <select class="form-control textos" id="plan" name="plan">
+                          <option value="">Plan que contrata</option>
+                          <option value="basico">Básico 100$</option>
+                          <option value="estandar">Estandar 250$</option>
+                          <option value="premium">Premium 600$</option>
+                        </select>
+                        <!--<input id="planContratado" class="form-control textos" type="text" placeholder="Basico" readonly>-->
+                        <br>
+                        <div class="centradoFOrmulario text-center">
+                          <button class="btn btn-color" type="button textos" name="button">Cambiar Plan</button>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="centradoFOrmulario">
+                        <label for="">Contraseña</label>
+                        <input id="contraseniaActual" type="text" class="form-control textos" placeholder="Escribe la contraseña actual">
+                        <input id="contraseniaNueva" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña">
+                        <input id="contraseniaVerif" type="text" class="form-control textos" placeholder="Escribe la nueva contraseña otra vez">
+                      </div>
+                      <hr>
+                      <div class="centradoFOrmulario text-center">
+                        <button class="btn btn-color" type="button" name="button">Guardar Cambios</button>
+                      </div>
+                    </div><!--Fin de la cuenta-->
+                  </div>
+  
+                  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <!--Favoritos-->
+                    <div id="sucursales" class="">
+                      <div id="promociones-favoritas" class="">
+                        <fieldset>
+                          <legend>Sucursales en la región</legend>
+                          <small>Sucursales en la ciudad principal donde desarrollas las ventas</small>
+                          <div class="form-group centradoFOrmulario">
+                              <div id="map"></div>
+                          </div>
+                        </fieldset>
+                        <hr>
+                        <div class="centradoFOrmulario">
+  
+                        </div>
+                      </div>
+                      <div id="empresas-favoritas" class="">
+                        <fieldset>
+                          <legend>Sucursales en el exterior</legend>
+                          <small>Sucursales fuera de la ciudad o país en donde desarrollas las ventas</small>
+                        </fieldset>
+                        <hr>
+                        <div class="centradoFOrmulario">
+  
+                        </div>
+                      </div>
+                    </div><!-- Fin de Favoritos-->
+                  </div>
+                </div><!--Fin del fill tabContent-->
+  
+              </div><!--fin del  lado derecho de las barras-->
+            </div><!--Fin de la fila de la card-body -->
+          </div><!--Fin del card-body-->
+        </form>
         <div class="card-footer">
         </div>
       </div><!--Fin de Ventana del perfil del empresa-->
@@ -395,7 +339,6 @@
         <div class="card-footer">
         </div>
       </div>
-
     </div>
     <!-- /.container-fluid -->
 
@@ -442,9 +385,7 @@
   <script src="js/jquery-3.4.1.min.js" charset="utf-8"></script>
   <script src="js/controlador.js" charset="utf-8"></script>
   
-  <!-- Scripts API de Mapa -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3Sp1JnD1M8t2N8G6AlDvDEHkOtWnIysE&callback=initMap"
-  type="text/javascript"></script>
+  <!-- Scripts de Mapa -->
   <script src="js/localizacion.js"></script>
   <script src="js/controlador-empresa.js"></script>
 </body>
