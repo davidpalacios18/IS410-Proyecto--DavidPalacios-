@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Regístro</title>
-    <link rel="icon" href="../iconos/icono-Blanco.png" type="image/x-icon">
+    <link rel="icon" href="../2-landigpage/iconos/icono-Blanco.png" type="image/x-icon">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -17,78 +17,82 @@
     <div class="superior"></div>
     <div class="container shadow-lg">
         <div class="panel">
-            <div class="row">
-                <!-- Primera Columna -->
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wave infoBasica">
-                    <!--<h4>Palacios'Store</h4>-->
-                    <div>
-                        <button type="button" class="close" aria-label="Close" onclick="window.location.href='index.html'" target="_blank">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+            <!-- Formulario -->
+            <form id="formulario" >
+                <div class="row">
+                    <!-- Primera Columna -->
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wave infoBasica">
+                        <div>
+                            <button type="button" class="close" aria-label="Close" onclick="window.location.href='index.html'" target="_blank">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <img id="logo" src="img/assets/p.png" alt="">
+                        <h6>Información Básica</h6><hr>
+                        <!-- Datos -->
+                        <div class="datos">
+                            <div class="form-group">
+                                <input id="nombreEmpresa" name="nombreEmpresa" type="text" class="form-control textos" placeholder="Nombre de empresa">
+                                <div id="msjNombre" class="invalid-feedback" style="color:white"></div>
+                            </div>
+                            <div class="form-group">
+                                <input id="sitioEmpresa" name="sitioEmpresa" type="text" class="form-control textos" placeholder="Sitio Web">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="descripcionEmpresa" name="descripcionEmpresa" class="form-control textos" name="" cols="4" rows="2" placeholder="Descripción de la empresas"></textarea>
+                            </div>
+                            <h6>Información Detallada</h6><hr>
+                            <div class="form-group">
+                                <select class="form-control textos" id="plan" name="plan">
+                                  <option value="">Plan que contrata</option>
+                                  <option value="basico">Básico 100$</option>
+                                  <option value="estandar">Estandar 250$</option>
+                                  <option value="premium">Premium 600$</option>
+                                </select>
+                                <div id="msjPlan" class="invalid-feedback" style="color:white"></div>
+                            </div>
+                        </div>
+                        <!-- /Datos -->
+                        <div class="anuncio text-center">
+                            <span>Nos alegra saber que seremos de tu preferencia y confianza conforme tus productos.</span>
+                        </div>
                     </div>
-                    <img id="logo" src="img/assets/p.png" alt="">
-                    <h6>Información Básica</h6><hr>
-                    <!-- Formulario -->
-                    <form>
-                        <div class="form-group">
-                            <input id="nombreEmpresa" name="nombreEmpresa" type="text" class="form-control textos" placeholder="Nombre de empresa">
-                            <div id="msjNombre" class="invalid-feedback" style="color:white"></div>
+                    <!-- /Primera Columna -->
+                    <!-- Segunda Columna -->
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 login">
+                        <div class="logo row"></div>
+                        <h6>Información de Acceso</h6><hr>
+                        <!-- Datos -->
+                        <div class="datos" >
+                            <div class="form-group">
+                                <input id="correo" name="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico">
+                                <div id="msjCorreo" class="invalid-feedback"></div>
+                            </div>
+                            <div class="form-group">
+                                <input id="contrasenia" name="contrasenia" type="text" class="form-control textos" placeholder="Introduzca una contraseña">
+                                <div id="msjPassword" class="invalid-feedback"></div>
+                            </div>
+                            <div class="form-group">
+                                <input id="contraseniaVerif" name="contraseniaVerif" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
+                                <div id="msjPassVerif" class="invalid-feedback"></div>
+                            </div><hr>
+                            <div class="text-center text-muted">
+                                <label><input type="checkbox" name="" id="" checked disabled>Acepto términos y condiciones</label><hr>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input id="sitioEmpresa" name="sitioEmpresa" type="text" class="form-control textos" placeholder="Sitio Web">
+                        <!-- /Datos -->
+                        <div class="anuncio text-center">
+                            <span>Verifica que tus datos esten escritos correctamente para un mejor servicio..</span>
                         </div>
-                        <div class="form-group">
-                            <textarea id="descripcionEmpresa" name="descripcionEmpresa" class="form-control textos" name="" cols="4" rows="2" placeholder="Descripción de la empresas"></textarea>
+                        <div class="text-center">
+                            <button type="button" onclick="crearCuentaVendedor()" class="btn botones btn-registro">Crear cuenta</button>
                         </div>
-                        <h6>Información Detallada</h6><hr>
-                        <div class="form-group">
-                            <select class="form-control textos" id="plan" name="plan">
-                              <option value="">Plan que contrata</option>
-                              <option value="basico">Básico 100$</option>
-                              <option value="estandar">Estandar 250$</option>
-                              <option value="premium">Premium 600$</option>
-                            </select>
-                            <div id="msjPlan" class="invalid-feedback" style="color:white"></div>
-                        </div>
-                    </form>
-                    <!-- /Formulario -->
-                    <div class="anuncio text-center">
-                        <span>Nos alegra saber que seremos de tu preferencia y confianza conforme tus productos.</span>
                     </div>
+                    <!-- /Segunda Columna -->
                 </div>
-                <!-- /Primera Columna -->
-                <!-- Segunda Columna -->
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 login">
-                    <div class="logo row"></div>
-                    <h6>Información de Acceso</h6><hr>
-                    <!-- Formulario -->
-                    <form>
-                        <div class="form-group">
-                            <input id="correo" name="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico">
-                            <div id="msjCorreo" class="invalid-feedback"></div>
-                        </div>
-                        <div class="form-group">
-                            <input id="contrasenia" name="contrasenia" type="text" class="form-control textos" placeholder="Introduzca una contraseña">
-                            <div id="msjPassword" class="invalid-feedback"></div>
-                        </div>
-                        <div class="form-group">
-                            <input id="contraseniaVerif" name="contraseniaVerif" type="text" class="form-control textos" placeholder="Vuelva a introducir la contraseña">
-                            <div id="msjPassVerif" class="invalid-feedback"></div>
-                        </div><hr>
-                        <div class="text-center text-muted">
-                            <label><input type="checkbox" name="" id="" checked disabled>Acepto términos y condiciones</label><hr>
-                        </div>
-                    </form>
-                    <!-- /Formulario -->
-                    <div class="anuncio text-center">
-                        <span>Verifica que tus datos esten escritos correctamente para un mejor servicio..</span>
-                    </div>
-                    <div class="text-center">
-                        <button type="button" onclick="crearCuentaVendedor()" class="btn botones btn-registro">Crear cuenta</button>
-                    </div>
-                </div>
-                <!-- /Segunda Columna -->
-            </div>
+
+            </form>
+            <!-- /Formulario -->
         </div>
     </div>
 

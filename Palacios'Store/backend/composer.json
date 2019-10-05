@@ -1,0 +1,13 @@
+{
+    "name": "alexa/backend",
+    "description": "Conexion proyecto a base de datos firebase",
+    "authors": [
+        {
+            "name": "David Palacios",
+            "email": "palacios18203@gmail.com"
+        }
+    ],
+    "require": {
+        "kreait/firebase-php": "^4.32"
+    }
+}

@@ -89,9 +89,6 @@ html, body{
     font-size: 1.9rem !important; 
     float: left !important;
 }
-form{
-    margin-top: 1.9rem;
-}
 form h3, form h6{
     padding: 0;
     margin: 0;
