@@ -35,6 +35,13 @@
     float: left !important;
 }
 .superior{
-    height: 8vw !important;
+    height: 2vw !important;
     width: 200px;
+}
+
+#formulario{
+    margin: 0rem !important;
+}
+form{
+    margin-top:0rem !important;
 }

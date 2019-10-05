@@ -30,7 +30,7 @@
                         <img id="logo" src="img/assets/p.png" alt="">
                         <h6>Información Básica</h6><hr>
                         <!-- Datos -->
-                        <div class="datos">
+                        <div data-spy="scroll" class="scrollspy-example" class="datos">
                             <div class="form-group">
                                 <input id="nombreEmpresa" name="nombreEmpresa" type="text" class="form-control textos" placeholder="Nombre de empresa">
                                 <div id="msjNombre" class="invalid-feedback" style="color:white"></div>
@@ -39,7 +39,14 @@
                                 <input id="sitioEmpresa" name="sitioEmpresa" type="text" class="form-control textos" placeholder="Sitio Web">
                             </div>
                             <div class="form-group">
+                                <input id="facebookEmpresa" type="text" name="facebookEmpresa" class="form-control textos" placeholder="Pagina de Facebook">
+                            </div>
+                            <div class="form-group">
                                 <textarea id="descripcionEmpresa" name="descripcionEmpresa" class="form-control textos" name="" cols="4" rows="2" placeholder="Descripción de la empresas"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <h6>Añadir una imagen</h6><br>
+                                <input type="file" name="imgEmpresa" id="imgEmpresa" class="form-control textos">
                             </div>
                             <h6>Información Detallada</h6><hr>
                             <div class="form-group">
@@ -64,6 +71,12 @@
                         <h6>Información de Acceso</h6><hr>
                         <!-- Datos -->
                         <div class="datos" >
+                            <div class="form-group">
+                                <input type="text" name="latitud" id="latitud" class="form-control textos" placeholder="Latitud">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Longitud" id="Longitud" class="form-control textos" placeholder="Longitud">
+                            </div>
                             <div class="form-group">
                                 <input id="correo" name="correo" type="email" class="form-control textos" placeholder="Dirección de correo electrónico">
                                 <div id="msjCorreo" class="invalid-feedback"></div>

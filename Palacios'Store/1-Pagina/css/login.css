@@ -1,4 +1,4 @@
-
+﻿
 html, body{
     height: 100%;
     /*overflow: hidden;*/
@@ -6,7 +6,7 @@ html, body{
     background: linear-gradient(to right, #009db9, #11dbff);
 }
 .superior{
-    height: 8vw;
+    height: 6vw;
     width: 200px;
 }
 
@@ -88,6 +88,9 @@ html, body{
     color: white !important;
     font-size: 1.9rem !important; 
     float: left !important;
+}
+form{
+    margin:0rem !important;
 }
 form h3, form h6{
     padding: 0;
