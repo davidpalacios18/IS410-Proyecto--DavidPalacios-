@@ -17,7 +17,7 @@ function encontrado(info){
     let latitud = info.coords.latitude;
     let longitud = info.coords.longitude;
 
-    let map = L.map('map').setView([latitud, longitud],11);
+    let map = L.map('map').setView([latitud, longitud],9);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
         attribution:'$copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
